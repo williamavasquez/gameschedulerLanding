@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportScheduler - WhatsApp Bot for Pickup Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span>Sport</span>Scheduler
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#stats">Stats</a>
+                <a href="#contact-us">Contact Us</a>
+                <a href="#try-now" class="nav-cta">Try the Bot Free</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="cta-button">
+                <a href="#try-now" class="btn btn-primary">Try Free</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animate-on-load">Stop Copy/Pasting Pickup Lists in WhatsApp.
+                        <span class="highlight">There's a Bot for That Now.</span>
+                    </h1>
+                    <p class="subheadline animate-on-load">Easily create games, track RSVPs, manage guests, and avoid chaos — all from your group chat.</p>
+                    <div class="hero-cta animate-on-load">
+                        <a href="#try-now" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i> Try the Bot Free
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary btn-large scroll-to">
+                            <i class="fas fa-eye"></i> See How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup animate-on-load">
+                        <div class="phone-screen">
+                            <div class="chat-bubble incoming">
+                                <span class="chat-sender">John</span>
+                                <p>Anyone up for basketball this weekend?</p>
+                            </div>
+                            <div class="chat-bubble incoming">
+                                <span class="chat-sender">SportScheduler Bot</span>
+                                <p>🏀 New Game Created: Saturday Basketball</p>
+                                <p>⏰ Time: Sat, 3:00 PM</p>
+                                <p>📍 Location: Central Park Courts</p>
+                                <p>Reply with:</p>
+                                <p>"/in" to join</p>
+                                <p>"/out" to decline</p>
+                            </div>
+                            <div class="chat-bubble incoming">
+                                <span class="chat-sender">Sarah</span>
+                                <p>/in</p>
+                            </div>
+                            <div class="chat-bubble incoming">
+                                <span class="chat-sender">SportScheduler Bot</span>
+                                <p>✅ Current Players (1/10):</p>
+                                <p>1. Sarah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="hero-wave">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#f3f4f6" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div> -->
+        </section>
+
+        <!-- Problem vs Solution section content will go here -->
+        <section id="problem-solution">
+            <div class="container">
+                <h2 class="section-title fade-in">Pickup Games Should Be Fun — Not a Mess</h2>
+                
+                <div class="problem-solution-container">
+                    <div class="problem-column slide-in-left">
+                        <div class="column-header">
+                            <div class="icon-circle problem">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <h3>The Problem</h3>
+                        </div>
+                        
+                        <ul class="problem-list">
+                            <li>
+                                <span class="problem-icon">❌</span>
+                                <p>Manually copy/pasting names every week</p>
+                            </li>
+                            <li>
+                                <span class="problem-icon">❌</span>
+                                <p>People joining twice or showing up uninvited</p>
+                            </li>
+                            <li>
+                                <span class="problem-icon">❌</span>
+                                <p>Last-minute confusion about who's playing</p>
+                            </li>
+                            <li>
+                                <span class="problem-icon">❌</span>
+                                <p>Overbooked games or not enough players</p>
+                            </li>
+                            <li>
+                                <span class="problem-icon">❌</span>
+                                <p>No accountability for no-shows</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-column slide-in-right">
+                        <div class="column-header">
+                            <div class="icon-circle solution">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h3>Our Solution</h3>
+                        </div>
+                        
+                        <ul class="solution-list">
+                            <li>
+                                <span class="solution-icon">✅</span>
+                                <p>Create a game with a simple command</p>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✅</span>
+                                <p>Players join or drop out instantly</p>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✅</span>
+                                <p>Live player count + waitlist built-in</p>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✅</span>
+                                <p>Automated reminders and lockouts</p>
+                            </li>
+                            <li>
+                                <span class="solution-icon">✅</span>
+                                <p>Optional payment & attendance tracking</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="section-footer fade-in">
+                    <p>This bot does what your group chat wants to do — but never does consistently.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works">
+            <div class="container">
+                <h2 class="section-title fade-in">Simple Commands. Instant Results.</h2>
+                
+                <p class="section-intro fade-in">
+                    No app. No spreadsheet. No chaos. Just drop a command in your WhatsApp group and the bot handles everything — from game creation to real-time RSVP tracking.
+                </p>
+                
+                <div class="video-container fade-in">
+                    <div class="video-wrapper">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Watch It in Action</span>
+                            <p>See exactly how it works — creating a game, joining, dropping out, and checking the live list. <br>This is the smoothest pickup game flow you've ever seen.</p>
+                        </div>
+                        <!-- Real video will replace this placeholder when available -->
+                        <!-- <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    </div>
+                </div>
+                
+                <div class="commands-container">
+                    <div class="command-card fade-in">
+                        <div class="command-icon">
+                            <i class="far fa-calendar-plus"></i>
+                        </div>
+                        <h3>📅 Create a Game</h3>
+                        <div class="command-syntax">
+                            <code>!!creategame 2024-04-09 7:00 PM 10 LA Fitness</code>
+                        </div>
+                        <p class="command-description">
+                            Instantly creates a game for April 9 at 7:00 PM with 10 player spots at LA Fitness.
+                        </p>
+                        <div class="command-demo">
+                            <div class="chat-demo">
+                                <div class="chat-bubble outgoing">
+                                    <p>!!creategame 2024-04-09 7:00 PM 10 LA Fitness</p>
+                                </div>
+                                <div class="chat-bubble incoming bot-message">
+                                    <p>🏀 New Game Created:</p>
+                                    <p>⏰ Date: Tuesday, April 9, 2024</p>
+                                    <p>⌚ Time: 7:00 PM</p>
+                                    <p>👥 Players: 0/10</p>
+                                    <p>📍 Location: LA Fitness</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="command-card fade-in">
+                        <div class="command-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>✅ Join or Leave</h3>
+                        <div class="command-syntax">
+                            <code>!!join / !!out</code>
+                        </div>
+                        <p class="command-description">
+                            Players can join or drop out in one second. No double entries. No confusion.
+                        </p>
+                        <div class="command-demo">
+                            <div class="chat-demo">
+                                <div class="chat-bubble outgoing">
+                                    <p>!!join</p>
+                                </div>
+                                <div class="chat-bubble incoming bot-message">
+                                    <p>✅ Added to the game!</p>
+                                    <p>Current Players (1/10):</p>
+                                    <p>1. John</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="command-card fade-in">
+                        <div class="command-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>📋 Show the Game List</h3>
+                        <div class="command-syntax">
+                            <code>!!showgame</code>
+                        </div>
+                        <p class="command-description">
+                            See the full RSVP list, player count, remaining spots, and game info — all in one clean message.
+                        </p>
+                        <div class="command-demo">
+                            <div class="chat-demo">
+                                <div class="chat-bubble outgoing">
+                                    <p>!!showgame</p>
+                                </div>
+                                <div class="chat-bubble incoming bot-message">
+                                    <p>🏀 Game Details:</p>
+                                    <p>⏰ Tuesday, April 9, 2024 at 7:00 PM</p>
+                                    <p>📍 LA Fitness</p>
+                                    <p>👥 Current Players (3/10):</p>
+                                    <p>1. John</p>
+                                    <p>2. Sarah</p>
+                                    <p>3. Mike</p>
+                                    <p>⏳ 7 spots remaining</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="command-card fade-in">
+                        <div class="command-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h3>👥 Optional Commands</h3>
+                        <div class="command-syntax">
+                            <code>!!addguest Alex or !!cancelgame</code>
+                        </div>
+                        <p class="command-description">
+                            Add guests, cancel games, or lock the list. Organizers stay in control with simple admin commands.
+                        </p>
+                        <div class="command-demo">
+                            <div class="chat-demo">
+                                <div class="chat-bubble outgoing">
+                                    <p>!!addguest Alex</p>
+                                </div>
+                                <div class="chat-bubble incoming bot-message">
+                                    <p>✅ Guest added!</p>
+                                    <p>Current Players (4/10):</p>
+                                    <p>1. John</p>
+                                    <p>2. Sarah</p>
+                                    <p>3. Mike</p>
+                                    <p>4. Alex (Guest of John)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title fade-in">Everything You Wish a WhatsApp Group Could Do</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="far fa-clipboard"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Auto-formatted game announcements</h3>
+                            <p>Create beautiful, readable game posts that include all the important details without copying and pasting.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Max player limits + waitlist support</h3>
+                            <p>Set exact player limits for your games and automatically manage waitlists when spots fill up.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Guest support with attribution</h3>
+                            <p>Let players bring guests while keeping track of who invited whom for accountability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Auto-reminders before game time</h3>
+                            <p>Send automatic notifications to confirmed players before the game to reduce no-shows.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Admin commands: cancel, remove, lock</h3>
+                            <p>Special organizer controls to manage everything from player removal to cancelling games.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card fade-in">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>No app download needed — it's all in chat</h3>
+                            <p>Works directly in your existing WhatsApp groups—no new apps or logins required.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="automation">
+            <div class="container">
+                <h2 class="section-title fade-in">Set It and Forget It</h2>
+                
+                <div class="automation-container">
+                    <div class="automation-content fade-in">
+                        <p class="automation-intro">No more chasing people. No more last-minute chaos. The bot sends reminders, tracks join/leave activity, and helps keep everyone accountable.</p>
+                        
+                        <p class="automation-description">With optional no-show tracking and player logs, it's easy to keep games fair — and make sure the reliable players get their spots.</p>
+                        
+                        <div class="automation-features">
+                            <div class="automation-feature">
+                                <div class="feature-icon">
+                                    <i class="far fa-bell"></i>
+                                </div>
+                                <div class="feature-detail">
+                                    <h3>Automatic Reminders</h3>
+                                    <p>Players get notifications 24 hours and 2 hours before game time</p>
+                                </div>
+                            </div>
+                            
+                            <div class="automation-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-history"></i>
+                                </div>
+                                <div class="feature-detail">
+                                    <h3>Activity Tracking</h3>
+                                    <p>Log shows who joined, left, or didn't show up</p>
+                                </div>
+                            </div>
+                            
+                            <div class="automation-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="feature-detail">
+                                    <h3>Player Reliability Score</h3>
+                                    <p>Optional feature to track who consistently shows up</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="automation-visual fade-in">
+                        <div class="phone-sequence">
+                            <div class="phone-notification active">
+                                <div class="notification-header">
+                                    <img src="https://i.imgur.com/3Cbnpkx.png" alt="WhatsApp Logo" class="app-icon">
+                                    <span class="app-name">WhatsApp</span>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                                <div class="notification-content">
+                                    <p class="notification-title">Soccer Game Reminder</p>
+                                    <p class="notification-message">⚽ Don't forget: Game at Central Park is in 2 hours!</p>
+                                </div>
+                            </div>
+                            
+                            <div class="phone-notification">
+                                <div class="notification-header">
+                                    <img src="https://i.imgur.com/3Cbnpkx.png" alt="WhatsApp Logo" class="app-icon">
+                                    <span class="app-name">WhatsApp</span>
+                                    <span class="notification-time">Just now</span>
+                                </div>
+                                <div class="notification-content">
+                                    <p class="notification-title">Game Status Update</p>
+                                    <p class="notification-message">✅ Player added! Alex joined the game (8/10 players)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="phone-notification">
+                                <div class="notification-header">
+                                    <img src="https://i.imgur.com/3Cbnpkx.png" alt="WhatsApp Logo" class="app-icon">
+                                    <span class="app-name">WhatsApp</span>
+                                    <span class="notification-time">5 min ago</span>
+                                </div>
+                                <div class="notification-content">
+                                    <p class="notification-title">Game Complete</p>
+                                    <p class="notification-message">🏆 Game summary: 10/10 players showed up! No no-shows.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="works-for-any-sport">
+            <div class="container">
+                <h2 class="section-title fade-in">Built for Basketball. Ready for Soccer, Volleyball, or Any Sport.</h2>
+                
+                <div class="sport-content-container">
+                    <div class="sport-text fade-in">
+                        <p class="sport-description">This bot works in any WhatsApp group. Whether it's basketball, soccer, volleyball, or open gym nights — the setup is the same.</p>
+                        
+                        <p class="sport-description">Just create a game, let players join, and show up ready to play. No spreadsheets. No side chats. Just one clean thread.</p>
+                        
+                        <div class="sport-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <p style="color: #1a1a1a;">Same commands work for any game type</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <p style="color: #1a1a1a;">Works for casual and organized leagues</p>
+                            </div>
+                            
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <p style="color: #1a1a1a;">Used by groups in 15+ countries</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sport-showcase fade-in">
+                        <div class="sport-carousel">
+                            <div class="sport-card active" id="basketball">
+                                <div class="sport-icon">
+                                    <i class="fas fa-basketball-ball"></i>
+                                </div>
+                                <h3>Basketball</h3>
+                                <div class="sport-example">
+                                    <div class="chat-bubble incoming">
+                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <p>🏀 Basketball Game Created:</p>
+                                        <p>⏰ Sat, June 15, 6:00 PM</p>
+                                        <p>📍 Downtown Courts</p>
+                                        <p>👥 Players: 0/10</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sport-card" id="soccer">
+                                <div class="sport-icon">
+                                    <i class="fas fa-futbol"></i>
+                                </div>
+                                <h3>Soccer</h3>
+                                <div class="sport-example">
+                                    <div class="chat-bubble incoming">
+                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <p>⚽ Soccer Game Created:</p>
+                                        <p>⏰ Sun, June 16, 10:00 AM</p>
+                                        <p>📍 Memorial Park Field</p>
+                                        <p>👥 Players: 0/22</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sport-card" id="volleyball">
+                                <div class="sport-icon">
+                                    <i class="fas fa-volleyball-ball"></i>
+                                </div>
+                                <h3>Volleyball</h3>
+                                <div class="sport-example">
+                                    <div class="chat-bubble incoming">
+                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <p>🏐 Volleyball Game Created:</p>
+                                        <p>⏰ Tue, June 18, 7:30 PM</p>
+                                        <p>📍 Beach Volleyball Courts</p>
+                                        <p>👥 Players: 0/12</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sport-card" id="tennis">
+                                <div class="sport-icon">
+                                    <i class="fas fa-table-tennis"></i>
+                                </div>
+                                <h3>Tennis</h3>
+                                <div class="sport-example">
+                                    <div class="chat-bubble incoming">
+                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <p>🎾 Tennis Session Created:</p>
+                                        <p>⏰ Thu, June 20, 5:00 PM</p>
+                                        <p>📍 Riverside Tennis Center</p>
+                                        <p>👥 Players: 0/4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="sport-selector">
+                            <div class="sport-option active" data-sport="basketball">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                            <div class="sport-option" data-sport="soccer">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <div class="sport-option" data-sport="volleyball">
+                                <i class="fas fa-volleyball-ball"></i>
+                            </div>
+                            <div class="sport-option" data-sport="tennis">
+                                <i class="fas fa-table-tennis"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sports-background">
+                <div class="sport-ball basketball"></div>
+                <div class="sport-ball soccer"></div>
+                <div class="sport-ball volleyball"></div>
+                <div class="sport-ball tennis"></div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <div class="container">
+                <h2 class="section-title fade-in">What Players Are Saying</h2>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Basketball Player">
+                                </div>
+                                <div class="testimonial-meta">
+                                    <h3>Michael C.</h3>
+                                    <div class="testimonial-info">
+                                        <span class="sport-type">Basketball</span>
+                                        <span class="group-size">Group of 12</span>
+                                    </div>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"We used to argue every week. Now it's smooth. This bot completely eliminated the chaos of our pickup games. I don't have to worry about who's coming anymore."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Soccer Player">
+                                </div>
+                                <div class="testimonial-meta">
+                                    <h3>Sarah L.</h3>
+                                    <div class="testimonial-info">
+                                        <span class="sport-type">Soccer</span>
+                                        <span class="group-size">Group of 22</span>
+                                    </div>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Joining a game takes 2 seconds. Zero confusion. I can't believe we used to do this manually with endless text messages and confusion about who's playing."</p>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Volleyball Player">
+                                </div>
+                                <div class="testimonial-meta">
+                                    <h3>David R.</h3>
+                                    <div class="testimonial-info">
+                                        <span class="sport-type">Volleyball</span>
+                                        <span class="group-size">Group of 8</span>
+                                    </div>
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>"Finally — a bot that just works and doesn't get in the way. No more spreadsheets, no more confusion about who's coming. Just simple commands and everything is organized."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-controls">
+                        <button class="testimonial-arrow prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="testimonial-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <button class="testimonial-arrow next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="trust-indicators fade-in">
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <p><span class="highlight">5,000+</span> Active Players</p>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <p><span class="highlight">15+</span> Countries</p>
+                    </div>
+                    
+                    <div class="trust-item">
+                        <div class="trust-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <p><span class="highlight">12,000+</span> Games Scheduled</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats">
+            <div class="container">
+                <h2 class="section-title fade-in">Want to Know Who Shows Up?</h2>
+                
+                <div class="stats-container">
+                    <div class="stats-content fade-in">
+                        <p class="stats-intro">Track weekly attendance, no-shows, and player streaks. The bot can generate weekly summaries, shout out reliable players, and help you manage payments or penalties with transparency.</p>
+                        
+                        <p class="stats-description">This feature is optional — but loved by serious organizers.</p>
+                        
+                        <div class="stats-benefits">
+                            <div class="stats-benefit">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Reliability Scores</h3>
+                                    <p>Track who consistently shows up vs. who cancels last minute</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-benefit">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Weekly Summaries</h3>
+                                    <p>Get automated attendance reports after each game</p>
+                                </div>
+                            </div>
+                            
+                            <div class="stats-benefit">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h3>Payment Tracking</h3>
+                                    <p>Manage court fees and track who's paid their share</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-visual fade-in">
+                        <div class="dashboard-mockup">
+                            <div class="dashboard-header">
+                                <h3>Player Stats Dashboard</h3>
+                                <span class="dashboard-period">Last 30 Days</span>
+                            </div>
+                            
+                            <div class="dashboard-metrics">
+                                <div class="metric-card">
+                                    <div class="metric-value">87%</div>
+                                    <div class="metric-label">Average Attendance</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">12</div>
+                                    <div class="metric-label">Games Played</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-value">3</div>
+                                    <div class="metric-label">No-Shows</div>
+                                </div>
+                            </div>
+                            
+                            <div class="attendance-chart">
+                                <div class="chart-header">
+                                    <h4>Player Reliability</h4>
+                                </div>
+                                <div class="chart-bars">
+                                    <div class="player-bar">
+                                        <div class="player-name">Michael</div>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 95%;"></div>
+                                            <span class="bar-value">95%</span>
+                                        </div>
+                                    </div>
+                                    <div class="player-bar">
+                                        <div class="player-name">Sarah</div>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 90%;"></div>
+                                            <span class="bar-value">90%</span>
+                                        </div>
+                                    </div>
+                                    <div class="player-bar">
+                                        <div class="player-name">David</div>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 85%;"></div>
+                                            <span class="bar-value">85%</span>
+                                        </div>
+                                    </div>
+                                    <div class="player-bar">
+                                        <div class="player-name">Jessica</div>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 75%;"></div>
+                                            <span class="bar-value">75%</span>
+                                        </div>
+                                    </div>
+                                    <div class="player-bar">
+                                        <div class="player-name">James</div>
+                                        <div class="bar-container">
+                                            <div class="bar" style="width: 65%;"></div>
+                                            <span class="bar-value">65%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="weekly-summary">
+                                <div class="summary-header">
+                                    <h4>Last Game Summary</h4>
+                                    <span class="summary-date">June 12, 2024</span>
+                                </div>
+                                <ul class="summary-list">
+                                    <li class="summary-item attended">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="player-name">Michael</span>
+                                        <span class="attendance-streak">🔥 5 game streak</span>
+                                    </li>
+                                    <li class="summary-item attended">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="player-name">Sarah</span>
+                                        <span class="attendance-streak">🔥 4 game streak</span>
+                                    </li>
+                                    <li class="summary-item attended">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span class="player-name">David</span>
+                                    </li>
+                                    <li class="summary-item no-show">
+                                        <i class="fas fa-times-circle"></i>
+                                        <span class="player-name">Jessica</span>
+                                        <span class="no-show-label">No show</span>
+                                    </li>
+                                    <li class="summary-item cancelled">
+                                        <i class="fas fa-minus-circle"></i>
+                                        <span class="player-name">James</span>
+                                        <span class="cancelled-label">Cancelled 2hrs before</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="enable-stats-cta fade-in">
+                    <p>Enable advanced stats with a simple command:</p>
+                    <div class="command-syntax">
+                        <code>!!enablestats</code>
+                    </div>
+                    <a href="#try-now" class="btn btn-primary">Try Stats Tracking Now</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="try-now">
+            <div class="container">
+                <div class="cta-container">
+                    <div class="cta-content fade-in">
+                        <h2 class="cta-headline">Ready to Make Game Day Effortless?</h2>
+                        <p class="cta-subheadline">Get started in seconds. The bot works in your WhatsApp group — no downloads or setup headaches.</p>
+                        
+                        <div class="cta-actions">
+                            <a href="#" class="btn btn-primary btn-large btn-cta">
+                                <i class="fab fa-whatsapp"></i> Add the Bot to WhatsApp
+                            </a>
+                            <div class="secondary-ctas">
+                                <a href="#" class="btn btn-secondary btn-medium">
+                                    <i class="fas fa-video"></i> Watch Demo
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-medium">
+                                    <i class="fas fa-flask"></i> Try Test Group
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-visual fade-in">
+                        <div class="phone-mockup cta-phone">
+                            <div class="phone-screen">
+                                <div class="chat-bubble incoming">
+                                    <span class="chat-sender">SportScheduler Bot</span>
+                                    <p>👋 Hi there! I'm ready to help organize your games.</p>
+                                    <p>Just add me to your WhatsApp group and type <strong>!!help</strong> to get started.</p>
+                                </div>
+                                <div class="floating-commands">
+                                    <div class="command">!!creategame</div>
+                                    <div class="command">!!join</div>
+                                    <div class="command">!!showgame</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pulse-circle"></div>
+                    </div>
+                </div>
+                
+                <div class="cta-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <p>Set up in 30 seconds</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                        <p>Free to start using</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <p>Works in any country</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <p>Full support included</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="seo-content">
+            <div class="container">
+                <div class="seo-content-wrapper">
+                    <h2 class="seo-title">Organize Weekly Pickup Games on WhatsApp with Zero Effort</h2>
+                    
+                    <div class="seo-body">
+                        <p>This WhatsApp bot is designed for anyone who plays pickup sports — basketball, soccer, volleyball, or any weekly group game. Instead of manually copying and pasting names, managing a messy RSVP list, or losing track of who's in, just use simple commands like <code>!!creategame</code> and <code>!!join</code>. The bot handles the rest — formatting, reminders, waitlists, and even accountability tracking.</p>
+                        
+                        <p>Whether you're a group admin or just tired of the confusion, this bot makes your game day easy, reliable, and fun. No app needed. No login. Just smooth group chat automation.</p>
+                        
+                        <div class="seo-keywords">
+                            <div class="keyword-pill">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp bot for basketball games</span>
+                            </div>
+                            <div class="keyword-pill">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span>Pickup game RSVP bot</span>
+                            </div>
+                            <div class="keyword-pill">
+                                <i class="fas fa-robot"></i>
+                                <span>Automate WhatsApp group RSVPs</span>
+                            </div>
+                            <div class="keyword-pill">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Weekly sports game organizer</span>
+                            </div>
+                            <div class="keyword-pill">
+                                <i class="fas fa-futbol"></i>
+                                <span>WhatsApp bot for soccer/volleyball games</span>
+                            </div>
+                        </div>
+                        
+                        <div class="final-cta">
+                            <a href="#try-now" class="btn btn-primary">Try the RSVP Bot Now</a>
+                            <p>Join thousands of sports groups already using this to simplify game day</p>
+                        </div>
+                    </div>
+                    
+                    <div class="seo-visual">
+                        <div class="keyword-cloud">
+                            <span class="keyword-sm">Sports RSVP</span>
+                            <span class="keyword-lg">WhatsApp Bot</span>
+                            <span class="keyword-md">Pickup Games</span>
+                            <span class="keyword-lg">Basketball</span>
+                            <span class="keyword-md">Soccer</span>
+                            <span class="keyword-sm">Volleyball</span>
+                            <span class="keyword-lg">Game Organizer</span>
+                            <span class="keyword-md">No-Show Tracking</span>
+                            <span class="keyword-sm">Player Lists</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <section id="contact-us" class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get in Touch</h2>
+            <p class="section-subtitle fade-in">Have questions or need help setting up the bot? We're here for you.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info slide-in-left">
+                    <div class="contact-info-card">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email Us</h3>
+                                <p>hello@sportscheduler.app</p>
+                                <p class="response-time">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Live Chat</h3>
+                                <p>Available 9am-5pm PT</p>
+                                <p class="response-time">Typical response in minutes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Office</h3>
+                                <p>San Francisco, CA</p>
+                                <p class="response-time">By appointment only</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h3>Connect With Us</h3>
+                        <div class="social-icons-large">
+                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container slide-in-right">
+                    <form id="contact-form" name="sport-scheduler-contact" method="POST" data-netlify="true" class="contact-form">
+                        <input type="hidden" name="form-name" value="sport-scheduler-contact" />
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-submit">
+                            Send Message
+                            <span class="submit-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- put new faq section here.  -->
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <p class="section-intro fade-in">
+                Everything you need to know about using the SportScheduler WhatsApp bot for your pickup games.
+            </p>
+            
+            <div class="faq-container fade-in">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I add the bot to my WhatsApp group?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Adding the bot is simple: click the "Add the Bot to WhatsApp" button above, which will open a chat with our bot. Then just add this contact to your sports group, and you're ready to go! Type <code>!!help</code> to see all available commands.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is SportScheduler free to use?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! SportScheduler is free to use for basic features. We offer a premium tier with advanced features like attendance tracking, automated reminders, and custom settings for a small monthly fee. The free tier has everything you need to organize great pickup games.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How many players can join a game?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can set any number of player slots when creating a game. For example: <code>!!creategame 2024-06-15 7:00 PM 12 Downtown Field</code> creates a game with 12 player slots. There's no upper limit, so you can organize anything from tennis matches to full soccer teams.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I schedule recurring games?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Use the <code>!!createrecurring</code> command to set up weekly or monthly games. For example: <code>!!createrecurring weekly thursday 7:00 PM 10 LA Fitness</code> will create a game every Thursday at the same time and location.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do reminders work?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>SportScheduler automatically sends reminders to all signed-up players 24 hours and 2 hours before the game. Premium users can customize reminder timing and add additional reminders if needed.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Does it work in all countries?</h3>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Since SportScheduler works through WhatsApp, it's available anywhere WhatsApp operates. The bot supports English language commands, with more languages coming soon.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <span>SportScheduler</span>
+                        </div>
+                        <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No more confusion.</p>
+                        <div class="social-icons">
+                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="#stats">Stats</a></li>
+                            <li><a href="#try-now">Get Started</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul class="footer-links">
+                            <li><a href="#help-center">Help Center</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#community">Community</a></li>
+                            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                            <li><a href="https://www.whatsapp.com/business/api" target="_blank">WhatsApp API</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:hello@sportscheduler.app">hello@sportscheduler.app</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
+                        </ul>
+                        <div class="newsletter">
+                            <h4>Stay Updated</h4>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button id="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
