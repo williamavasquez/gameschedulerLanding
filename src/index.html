@@ -63,6 +63,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+
+    <!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VSMQQG4TFY');
+</script> -->
+
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-VSMQQG4TFY');
+        
+        // Custom dimensions for enhanced reporting
+        gtag('set', {
+            'user_properties': {
+                'visitor_type': 'first_time'
+            }
+        });
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 </head>
@@ -1390,6 +1419,207 @@
     </footer>
 
     <script src="script.js"></script>
+    
+    <!-- Google Analytics Event Tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track CTA button clicks
+            const ctaButtons = document.querySelectorAll('.btn-primary, .btn-cta');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const buttonText = this.textContent.trim();
+                    const section = this.closest('section')?.id || 'unknown';
+                    
+                    gtag('event', 'cta_click', {
+                        'button_text': buttonText,
+                        'section': section,
+                        'page_location': window.location.href
+                    });
+                });
+            });
+            
+            // Track form submissions
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    // Get form data for analytics
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    
+                    // Hash email for privacy before sending to GA
+                    const hashedEmail = email ? btoa(email).substring(0, 10) : 'not_provided';
+                    
+                    gtag('event', 'form_submission', {
+                        'form_id': 'contact-form',
+                        'form_name': 'Contact Form',
+                        'subject': subject,
+                        'user_type': 'lead',
+                        'user_id': hashedEmail  // Pseudonymized identifier
+                    });
+                    
+                    // Set user properties for future tracking
+                    gtag('set', 'user_properties', {
+                        'has_contacted_us': true,
+                        'contact_subject': subject
+                    });
+                });
+                
+                // Track form field interactions
+                const formFields = contactForm.querySelectorAll('input, textarea, select');
+                formFields.forEach(field => {
+                    field.addEventListener('focus', function() {
+                        gtag('event', 'form_field_focus', {
+                            'field_id': this.id,
+                            'field_name': this.name
+                        });
+                    });
+                });
+            }
+            
+            // Newsletter signup tracking
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    const newsletterEmail = this.querySelector('input[type="email"]').value;
+                    const hashedEmail = newsletterEmail ? btoa(newsletterEmail).substring(0, 10) : 'not_provided';
+                    
+                    gtag('event', 'newsletter_signup', {
+                        'form_location': 'footer',
+                        'user_id': hashedEmail
+                    });
+                    
+                    // Set user properties
+                    gtag('set', 'user_properties', {
+                        'newsletter_subscriber': true,
+                        'subscription_date': new Date().toISOString().split('T')[0]
+                    });
+                });
+            }
+            
+            // Track video interactions
+            const videoPlaceholder = document.querySelector('.video-placeholder');
+            if (videoPlaceholder) {
+                videoPlaceholder.addEventListener('click', function() {
+                    gtag('event', 'video_start', {
+                        'video_title': 'How It Works Demo'
+                    });
+                });
+            }
+            
+            // Track feature card views (Intersection Observer)
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            if (featureCards.length && 'IntersectionObserver' in window) {
+                const featureObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const featureTitle = entry.target.querySelector('h3').textContent;
+                            gtag('event', 'feature_view', {
+                                'feature_name': featureTitle
+                            });
+                            featureObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {threshold: 0.75});
+                
+                featureCards.forEach(card => {
+                    featureObserver.observe(card);
+                });
+            }
+            
+            // Track FAQ interactions
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    const questionText = this.querySelector('h3').textContent;
+                    gtag('event', 'faq_click', {
+                        'question': questionText
+                    });
+                });
+            });
+            
+            // Track navigation link clicks
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    gtag('event', 'navigation_click', {
+                        'link_text': this.textContent,
+                        'link_url': this.getAttribute('href')
+                    });
+                });
+            });
+            
+            // Track scroll depth
+            let scrollMarkers = [25, 50, 75, 90, 100];
+            let markers = {};
+            scrollMarkers.forEach(marker => {
+                markers[marker] = false;
+            });
+            
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                
+                scrollMarkers.forEach(marker => {
+                    if (scrollPercent >= marker && !markers[marker]) {
+                        markers[marker] = true;
+                        gtag('event', 'scroll_depth', {
+                            'depth_percentage': marker,
+                            'page_title': document.title
+                        });
+                    }
+                });
+            });
+            
+            // Track testimonial navigation
+            const testimonialControls = document.querySelectorAll('.testimonial-arrow, .testimonial-dots .dot');
+            testimonialControls.forEach(control => {
+                control.addEventListener('click', function() {
+                    const direction = this.classList.contains('prev') ? 'previous' : 
+                                    this.classList.contains('next') ? 'next' : 
+                                    'dot-' + (this.dataset.index || '0');
+                    
+                    gtag('event', 'testimonial_navigation', {
+                        'direction': direction
+                    });
+                });
+            });
+            
+            // Track time spent on page
+            let timeMarkers = [30, 60, 120, 300]; // seconds
+            let timeMarked = {};
+            timeMarkers.forEach(marker => {
+                timeMarked[marker] = false;
+            });
+            
+            setInterval(function() {
+                const timeOnPage = Math.floor((new Date() - window.performance.timing.navigationStart) / 1000);
+                
+                timeMarkers.forEach(marker => {
+                    if (timeOnPage >= marker && !timeMarked[marker]) {
+                        timeMarked[marker] = true;
+                        gtag('event', 'time_on_page', {
+                            'duration_seconds': marker,
+                            'page_path': window.location.pathname
+                        });
+                    }
+                });
+            }, 1000);
+            
+            // Enhanced ecommerce for future use
+            document.querySelectorAll('[data-ecommerce-item]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const productData = JSON.parse(this.dataset.product || '{}');
+                    if (Object.keys(productData).length) {
+                        gtag('event', 'select_item', {
+                            items: [productData]
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
