@@ -1,9 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportScheduler - WhatsApp Bot for Pickup Games</title>
+
+    <!-- Primary Meta Tags -->
+    <title>PickupPal - WhatsApp Bot for Pickup Games</title>
+    <meta name="title" content="PickupPal - WhatsApp Bot for Pickup Games">
+    <meta name="description"
+        content="Easily create games, track RSVPs, manage guests, and avoid chaos — all from your WhatsApp group chat. No app needed.">
+    <meta name="keywords"
+        content="pickup games, WhatsApp bot, RSVP bot, basketball games, soccer games, volleyball, sports organizer, pickup game scheduler, WhatsApp group games">
+    <meta name="author" content="PickupPal">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="PickupPal">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0275d8">
+    <meta name="msapplication-TileColor" content="#0275d8">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mypickuppal.com/">
+    <meta property="og:title" content="PickupPal - WhatsApp Bot for Pickup Games">
+    <meta property="og:description"
+        content="Stop copy/pasting pickup lists in WhatsApp. Create games, track RSVPs, and manage players with simple commands.">
+    <meta property="og:image" content="https://mypickuppal.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="PickupPal">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mypickuppal.com/">
+    <meta property="twitter:title" content="PickupPal - WhatsApp Bot for Pickup Games">
+    <meta property="twitter:description"
+        content="Organize pickup games with zero hassle. No more copy/paste. No more confusion.">
+    <meta property="twitter:image" content="https://mypickuppal.com/images/twitter-image.jpg">
+    <meta property="twitter:creator" content="@PickupPal">
+
+    <!-- App-specific meta tags -->
+    <meta name="application-name" content="PickupPal">
+    <meta name="apple-mobile-web-app-title" content="PickupPal">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mypickuppal.com/">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,12 +92,15 @@
             }
         });
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="container">
             <div class="logo">
-                <span>Sport</span>Scheduler
+                <span>Pickup</span>Pal
             </div>
             <div class="nav-links">
                 <a href="#how-it-works">How It Works</a>
@@ -56,21 +114,44 @@
                 <span></span>
                 <span></span>
             </button>
+            <div class="donate-button">
+                <!-- <form action="https://www.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
+                    <input type="hidden" name="no_recurring" value="0" />
+                    <input type="hidden" name="item_name"
+                        value="Buy me a beer if I saved you some time organizing your pickup game! " />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                        name="submit" title="PayPal - The safer, easier way to pay online!"
+                        alt="Donate with PayPal button" />
+                    <img alt="Donate to PickupPal" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form> -->
+                <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                    <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
+                    <input type="hidden" name="no_recurring" value="0" />
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <input type="hidden" name="item_name" value="Buy me a beer if I saved you some time organizing your pickup game! " />
+                    <button type="submit" class="btn btn-donate">
+                        🍻 Buy me a Beer
+                    </button>
+                </form>
+            </div>
             <div class="cta-button">
                 <a href="#contact-us" class="btn btn-primary">Contact Us</a>
             </div>
         </nav>
     </header>
-    
+
     <main>
         <!-- Hero Section -->
         <section id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 style="text-wrap: balance;"class="animate-on-load">Stop Copy/Pasting Pickup Lists in WhatsApp.
+                    <h1 style="text-wrap: balance;" class="animate-on-load">Stop Copy/Pasting Pickup Lists in WhatsApp.
                         <span class="highlight">There's a Bot for That Now.</span>
                     </h1>
-                    <p style="text-wrap: balance;"class="subheadline animate-on-load">Easily create games, track RSVPs, manage guests, and avoid chaos — all from your group chat.</p>
+                    <p style="text-wrap: balance;" class="subheadline animate-on-load">Easily create games, track RSVPs,
+                        manage guests, and avoid chaos — all from your group chat.</p>
                     <div class="hero-cta animate-on-load">
                         <a href="#try-now" class="btn btn-primary btn-large">
                             <i class="fas fa-rocket"></i> Try the Bot Free
@@ -88,7 +169,7 @@
                                 <p>Anyone up for basketball this weekend?</p>
                             </div>
                             <div class="chat-bubble incoming">
-                                <span class="chat-sender">SportScheduler Bot</span>
+                                <span class="chat-sender">PickupPal Bot</span>
                                 <p>🏀 New Game Created: Saturday Basketball</p>
                                 <p>⏰ Time: Sat, 3:00 PM</p>
                                 <p>📍 Location: Central Park Courts</p>
@@ -104,7 +185,7 @@
                                 <p>!!join</p>
                             </div>
                             <div class="chat-bubble incoming">
-                                <span class="chat-sender">SportScheduler Bot</span>
+                                <span class="chat-sender">PickupPal Bot</span>
                                 <p>✅ Current Players (2/10):</p>
                                 <p>1. Sarah</p>
                                 <p>2. John</p>
@@ -124,23 +205,25 @@
         <section id="how-it-works">
             <div class="container">
                 <h2 class="section-title fade-in">Simple Commands. Instant Results.</h2>
-                
+
                 <p class="section-intro fade-in">
-                    No app. No spreadsheet. No chaos. Just drop a command in your WhatsApp group and the bot handles everything — from game creation to real-time RSVP tracking.
+                    No app. No spreadsheet. No chaos. Just drop a command in your WhatsApp group and the bot handles
+                    everything — from game creation to real-time RSVP tracking.
                 </p>
-                
+
                 <div class="video-container fade-in">
                     <div class="video-wrapper">
                         <div class="video-placeholder">
                             <i class="fas fa-play-circle"></i>
                             <span>Watch It in Action</span>
-                            <p>See exactly how it works — creating a game, joining, dropping out, and checking the live list. <br>This is the smoothest pickup game flow you've ever seen.</p>
+                            <p>See exactly how it works — creating a game, joining, dropping out, and checking the live
+                                list. <br>This is the smoothest pickup game flow you've ever seen.</p>
                         </div>
                         <!-- Real video will replace this placeholder when available -->
                         <!-- <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                     </div>
                 </div>
-                
+
                 <div class="commands-container">
                     <div class="command-card fade-in">
                         <div class="command-icon">
@@ -168,7 +251,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="command-card fade-in">
                         <div class="command-icon">
                             <i class="fas fa-user-plus"></i>
@@ -193,7 +276,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="command-card fade-in">
                         <div class="command-icon">
                             <i class="fas fa-clipboard-list"></i>
@@ -203,7 +286,8 @@
                             <code>!!showgame</code>
                         </div>
                         <p class="command-description">
-                            See the full RSVP list, player count, remaining spots, and game info — all in one clean message.
+                            See the full RSVP list, player count, remaining spots, and game info — all in one clean
+                            message.
                         </p>
                         <div class="command-demo">
                             <div class="chat-demo">
@@ -223,7 +307,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="command-card fade-in">
                         <div class="command-icon">
                             <i class="fas fa-cog"></i>
@@ -233,7 +317,8 @@
                             <code>!!addguest Alex or !!cancelgame</code>
                         </div>
                         <p class="command-description">
-                            Add guests, cancel games, or lock the list. Organizers stay in control with simple admin commands.
+                            Add guests, cancel games, or lock the list. Organizers stay in control with simple admin
+                            commands.
                         </p>
                         <div class="command-demo">
                             <div class="chat-demo">
@@ -255,12 +340,12 @@
             </div>
         </section>
 
-        
+
         <!-- Problem vs Solution section content will go here -->
         <section id="problem-solution">
             <div class="container">
                 <h2 class="section-title fade-in">Pickup Games Should Be Fun — Not a Mess</h2>
-                
+
                 <div class="problem-solution-container">
                     <div class="problem-column slide-in-left">
                         <div class="column-header">
@@ -269,7 +354,7 @@
                             </div>
                             <h3>The Problem</h3>
                         </div>
-                        
+
                         <ul class="problem-list">
                             <li>
                                 <span class="problem-icon">❌</span>
@@ -293,7 +378,7 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div class="solution-column slide-in-right">
                         <div class="column-header">
                             <div class="icon-circle solution">
@@ -301,7 +386,7 @@
                             </div>
                             <h3>Our Solution</h3>
                         </div>
-                        
+
                         <ul class="solution-list">
                             <li>
                                 <span class="solution-icon">✅</span>
@@ -326,7 +411,7 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="section-footer fade-in">
                     <p>This bot does what your group chat wants to do — but never does consistently.</p>
                 </div>
@@ -337,13 +422,15 @@
         <section id="works-for-any-sport">
             <div class="container">
                 <h2 class="section-title fade-in">Built for Soccer. Ready for Basketball, Volleyball, or Any Sport.</h2>
-                
+
                 <div class="sport-content-container">
                     <div class="sport-text fade-in">
-                        <p class="sport-description">This bot works in any WhatsApp group. Whether it's basketball, soccer, volleyball, or open gym nights — the setup is the same.</p>
-                        
-                        <p class="sport-description">Just create a game, let players join, and show up ready to play. No spreadsheets. No side chats. Just one clean thread.</p>
-                        
+                        <p class="sport-description">This bot works in any WhatsApp group. Whether it's basketball,
+                            soccer, volleyball, or open gym nights — the setup is the same.</p>
+
+                        <p class="sport-description">Just create a game, let players join, and show up ready to play. No
+                            spreadsheets. No side chats. Just one clean thread.</p>
+
                         <div class="sport-benefits">
                             <div class="benefit-item">
                                 <div class="benefit-icon">
@@ -351,14 +438,14 @@
                                 </div>
                                 <p style="color: #1a1a1a;">Same commands work for any game type</p>
                             </div>
-                            
+
                             <div class="benefit-item">
                                 <div class="benefit-icon">
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <p style="color: #1a1a1a;">Works for casual and organized leagues</p>
                             </div>
-                            
+
                             <div class="benefit-item">
                                 <div class="benefit-icon">
                                     <i class="fas fa-globe"></i>
@@ -367,11 +454,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="sport-showcase fade-in">
                         <div class="sport-carousel">
-                           
-                            
+
+
                             <div class="sport-card" id="soccer">
                                 <div class="sport-icon">
                                     <i class="fas fa-futbol"></i>
@@ -379,7 +466,7 @@
                                 <h3>Soccer</h3>
                                 <div class="sport-example">
                                     <div class="chat-bubble incoming">
-                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <span class="chat-sender">PickupPal Bot</span>
                                         <p>⚽ Soccer Game Created:</p>
                                         <p>⏰ Sun, June 16, 10:00 AM</p>
                                         <p>📍 Memorial Park Field</p>
@@ -395,7 +482,7 @@
                                 <h3>Basketball</h3>
                                 <div class="sport-example">
                                     <div class="chat-bubble incoming">
-                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <span class="chat-sender">PickupPal Bot</span>
                                         <p>🏀 Basketball Game Created:</p>
                                         <p>⏰ Sat, June 15, 6:00 PM</p>
                                         <p>📍 Downtown Courts</p>
@@ -403,7 +490,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="sport-card" id="volleyball">
                                 <div class="sport-icon">
                                     <i class="fas fa-volleyball-ball"></i>
@@ -411,7 +498,7 @@
                                 <h3>Volleyball</h3>
                                 <div class="sport-example">
                                     <div class="chat-bubble incoming">
-                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <span class="chat-sender">PickupPal Bot</span>
                                         <p>🏐 Volleyball Game Created:</p>
                                         <p>⏰ Tue, June 18, 7:30 PM</p>
                                         <p>📍 Beach Volleyball Courts</p>
@@ -419,7 +506,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="sport-card" id="tennis">
                                 <div class="sport-icon">
                                     <i class="fas fa-table-tennis"></i>
@@ -427,7 +514,7 @@
                                 <h3>Tennis</h3>
                                 <div class="sport-example">
                                     <div class="chat-bubble incoming">
-                                        <span class="chat-sender">SportScheduler Bot</span>
+                                        <span class="chat-sender">PickupPal Bot</span>
                                         <p>🎾 Tennis Session Created:</p>
                                         <p>⏰ Thu, June 20, 5:00 PM</p>
                                         <p>📍 Riverside Tennis Center</p>
@@ -436,7 +523,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="sport-selector">
                             <div class="sport-option active" data-sport="basketball">
                                 <i class="fas fa-basketball-ball"></i>
@@ -454,7 +541,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="sports-background">
                 <div class="sport-ball basketball"></div>
                 <div class="sport-ball soccer"></div>
@@ -462,12 +549,12 @@
                 <div class="sport-ball tennis"></div>
             </div>
         </section>
-        
+
 
         <section id="features">
             <div class="container">
                 <h2 class="section-title fade-in">Everything You Wish a WhatsApp Group Could Do</h2>
-                
+
                 <div class="features-grid">
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
@@ -475,20 +562,22 @@
                         </div>
                         <div class="feature-content">
                             <h3>Auto-formatted game announcements</h3>
-                            <p>Create beautiful, readable game posts that include all the important details without copying and pasting.</p>
+                            <p>Create beautiful, readable game posts that include all the important details without
+                                copying and pasting.</p>
                         </div>
                     </div>
-                    
+
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
                             <i class="fas fa-user-check"></i>
                         </div>
                         <div class="feature-content">
                             <h3>Max player limits + waitlist support</h3>
-                            <p>Set exact player limits for your games and automatically manage waitlists when spots fill up.</p>
+                            <p>Set exact player limits for your games and automatically manage waitlists when spots fill
+                                up.</p>
                         </div>
                     </div>
-                    
+
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
                             <i class="fas fa-user-plus"></i>
@@ -498,7 +587,7 @@
                             <p>Let players bring guests while keeping track of who invited whom for accountability.</p>
                         </div>
                     </div>
-                    
+
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
                             <i class="far fa-clock"></i>
@@ -508,17 +597,18 @@
                             <p>Send automatic notifications to confirmed players before the game to reduce no-shows.</p>
                         </div>
                     </div>
-                    
+
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <div class="feature-content">
                             <h3>Admin commands: cancel, remove, lock</h3>
-                            <p>Special organizer controls to manage everything from player removal to cancelling games.</p>
+                            <p>Special organizer controls to manage everything from player removal to cancelling games.
+                            </p>
                         </div>
                     </div>
-                    
+
                     <div class="feature-card fade-in">
                         <div class="feature-icon">
                             <i class="fas fa-mobile-alt"></i>
@@ -535,13 +625,15 @@
         <section id="automation">
             <div class="container">
                 <h2 class="section-title fade-in">Set It and Forget It</h2>
-                
+
                 <div class="automation-container">
                     <div class="automation-content fade-in">
-                        <p class="automation-intro">No more chasing people. No more last-minute chaos. The bot sends reminders, tracks join/leave activity, and helps keep everyone accountable.</p>
-                        
-                        <p class="automation-description">With optional no-show tracking and player logs, it's easy to keep games fair — and make sure the reliable players get their spots.</p>
-                        
+                        <p class="automation-intro">No more chasing people. No more last-minute chaos. The bot sends
+                            reminders, tracks join/leave activity, and helps keep everyone accountable.</p>
+
+                        <p class="automation-description">With optional no-show tracking and player logs, it's easy to
+                            keep games fair — and make sure the reliable players get their spots.</p>
+
                         <div class="automation-features">
                             <div class="automation-feature">
                                 <div class="feature-icon">
@@ -552,7 +644,7 @@
                                     <p>Players get notifications 24 hours and 2 hours before game time</p>
                                 </div>
                             </div>
-                            
+
                             <div class="automation-feature">
                                 <div class="feature-icon">
                                     <i class="fas fa-history"></i>
@@ -562,7 +654,7 @@
                                     <p>Log shows who joined, left, or didn't show up</p>
                                 </div>
                             </div>
-                            
+
                             <div class="automation-feature">
                                 <div class="feature-icon">
                                     <i class="fas fa-user-check"></i>
@@ -574,7 +666,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="automation-visual fade-in">
                         <div class="phone-sequence">
                             <div class="phone-notification active">
@@ -585,10 +677,11 @@
                                 </div>
                                 <div class="notification-content">
                                     <p class="notification-title">Soccer Game Reminder</p>
-                                    <p class="notification-message">⚽ Don't forget: Game at Central Park is in 2 hours!</p>
+                                    <p class="notification-message">⚽ Don't forget: Game at Central Park is in 2 hours!
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <div class="phone-notification">
                                 <div class="notification-header">
                                     <img src="https://i.imgur.com/3Cbnpkx.png" alt="WhatsApp Logo" class="app-icon">
@@ -597,10 +690,11 @@
                                 </div>
                                 <div class="notification-content">
                                     <p class="notification-title">Game Status Update</p>
-                                    <p class="notification-message">✅ Player added! Alex joined the game (8/10 players)</p>
+                                    <p class="notification-message">✅ Player added! Alex joined the game (8/10 players)
+                                    </p>
                                 </div>
                             </div>
-                            
+
                             <div class="phone-notification">
                                 <div class="notification-header">
                                     <img src="https://i.imgur.com/3Cbnpkx.png" alt="WhatsApp Logo" class="app-icon">
@@ -609,11 +703,12 @@
                                 </div>
                                 <div class="notification-content">
                                     <p class="notification-title">Game Complete</p>
-                                    <p class="notification-message">🏆 Game summary: 10/10 players showed up! No no-shows.</p>
+                                    <p class="notification-message">🏆 Game summary: 10/10 players showed up! No
+                                        no-shows.</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="notification-dots">
                             <span class="dot active"></span>
                             <span class="dot"></span>
@@ -624,12 +719,12 @@
             </div>
         </section>
 
-        
+
 
         <section id="testimonials">
             <div class="container">
                 <h2 class="section-title fade-in">What Players Are Saying</h2>
-                
+
                 <div class="testimonials-container">
                     <div class="testimonial-slider">
                         <div class="testimonial-card fade-in">
@@ -653,10 +748,11 @@
                                 </div>
                             </div>
                             <div class="testimonial-content">
-                                <p>"We used to argue every week. Now it's smooth. This bot completely eliminated the chaos of our pickup games. I don't have to worry about who's coming anymore."</p>
+                                <p>"We used to argue every week. Now it's smooth. This bot completely eliminated the
+                                    chaos of our pickup games. I don't have to worry about who's coming anymore."</p>
                             </div>
                         </div>
-                        
+
                         <!-- <div class="testimonial-card fade-in">
                             <div class="testimonial-header">
                                 <div class="testimonial-avatar">
@@ -703,10 +799,12 @@
                                 </div>
                             </div>
                             <div class="testimonial-content">
-                                <p>"Our pickup games used to be so disorganized. With SportScheduler, I just create the game and the bot handles everything else - RSVPs, reminders, even waiting lists. It's saved me hours of coordination every week!"</p>
+                                <p>"Our pickup games used to be so disorganized. With PickupPal, I just create the game
+                                    and the bot handles everything else - RSVPs, reminders, even waiting lists. It's
+                                    saved me hours of coordination every week!"</p>
                             </div>
                         </div>
-                        
+
                         <div class="testimonial-card fade-in">
                             <div class="testimonial-header">
                                 <div class="testimonial-avatar">
@@ -728,11 +826,13 @@
                                 </div>
                             </div>
                             <div class="testimonial-content">
-                                <p>"Finally — a bot that just works and doesn't get in the way. No more spreadsheets, no more confusion about who's coming. Just simple commands and everything is organized."</p>
+                                <p>"Finally — a bot that just works and doesn't get in the way. No more spreadsheets, no
+                                    more confusion about who's coming. Just simple commands and everything is
+                                    organized."</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="testimonial-controls">
                         <button class="testimonial-arrow prev">
                             <i class="fas fa-chevron-left"></i>
@@ -747,7 +847,7 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <div class="trust-indicators fade-in">
                     <div class="trust-item">
                         <div class="trust-icon">
@@ -755,14 +855,14 @@
                         </div>
                         <p><span class="highlight">5,000+</span> Active Players</p>
                     </div>
-                    
+
                     <div class="trust-item">
                         <div class="trust-icon">
                             <i class="fas fa-globe-americas"></i>
                         </div>
                         <p><span class="highlight">15+</span> Countries</p>
                     </div>
-                    
+
                     <div class="trust-item">
                         <div class="trust-icon">
                             <i class="fas fa-basketball-ball"></i>
@@ -932,8 +1032,9 @@
                 <div class="cta-container">
                     <div class="cta-content fade-in">
                         <h2 class="cta-headline">Ready to Make Game Day Effortless?</h2>
-                        <p class="cta-subheadline">Get started in seconds. The bot works in your WhatsApp group — no downloads or setup headaches.</p>
-                        
+                        <p class="cta-subheadline">Get started in seconds. The bot works in your WhatsApp group — no
+                            downloads or setup headaches.</p>
+
                         <div class="cta-actions">
                             <!-- <a href="#" class="btn btn-primary btn-large btn-cta">
                                 <i class="fab fa-whatsapp"></i> Add the Bot to WhatsApp
@@ -942,33 +1043,35 @@
                                 <a href="#how-it-works" class="btn btn-secondary btn-medium">
                                     <i class="fas fa-video"></i> Watch Demo
                                 </a>
-                                
+
                                 <a href="#contact-us" class="btn btn-secondary btn-medium">
                                     <i class="fas fa-flask"></i> Try Test Group? Reach Out!
                                 </a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="cta-visual fade-in">
                         <div class="phone-mockup cta-phone">
                             <div class="phone-screen">
                                 <div class="chat-bubble incoming">
-                                    <span class="chat-sender">SportScheduler Bot</span>
+                                    <span class="chat-sender">PickupPal Bot</span>
                                     <p style="color: #000;">👋 Hi there! I'm ready to help organize your games.</p>
-                                    <p style="color: #000;">Just add me to your WhatsApp group and type <strong>!!help</strong> to get started.</p>
+                                    <p style="color: #000;">Just add me to your WhatsApp group and type
+                                        <strong>!!help</strong> to get started.
+                                    </p>
                                 </div>
                                 <div class="floating-commands">
-                                    <div  style="color: #000;"class="command">!!creategame</div>
-                                    <div  style="color: #000;"class="command">!!join</div>
-                                    <div  style="color: #000;"class="command">!!showgame</div>
+                                    <div style="color: #000;" class="command">!!creategame</div>
+                                    <div style="color: #000;" class="command">!!join</div>
+                                    <div style="color: #000;" class="command">!!showgame</div>
                                 </div>
                             </div>
                         </div>
                         <div class="pulse-circle"></div>
                     </div>
                 </div>
-                
+
                 <div class="cta-benefits fade-in">
                     <div class="benefit-item">
                         <div class="benefit-icon">
@@ -976,21 +1079,21 @@
                         </div>
                         <p>Set up in 30 seconds</p>
                     </div>
-                    
+
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <i class="fas fa-unlock"></i>
                         </div>
                         <p>Free to start using</p>
                     </div>
-                    
+
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <i class="fas fa-globe"></i>
                         </div>
                         <p>Works in any country</p>
                     </div>
-                    
+
                     <div class="benefit-item">
                         <div class="benefit-icon">
                             <i class="fas fa-headset"></i>
@@ -1005,12 +1108,18 @@
             <div class="container">
                 <div class="seo-content-wrapper">
                     <h2 class="seo-title">Organize Weekly Pickup Games on WhatsApp with Zero Effort</h2>
-                    
+
                     <div class="seo-body">
-                        <p>This WhatsApp bot is designed for anyone who plays pickup sports — basketball, soccer, volleyball, or any weekly group game. Instead of manually copying and pasting names, managing a messy RSVP list, or losing track of who's in, just use simple commands like <code>!!creategame</code> and <code>!!join</code>. The bot handles the rest — formatting, reminders, waitlists, and even accountability tracking.</p>
-                        
-                        <p>Whether you're a group admin or just tired of the confusion, this bot makes your game day easy, reliable, and fun. No app needed. No login. Just smooth group chat automation.</p>
-                        
+                        <p>This WhatsApp bot is designed for anyone who plays pickup sports — basketball, soccer,
+                            volleyball, or any weekly group game. Instead of manually copying and pasting names,
+                            managing a messy RSVP list, or losing track of who's in, just use simple commands like
+                            <code>!!creategame</code> and <code>!!join</code>. The bot handles the rest — formatting,
+                            reminders, waitlists, and even accountability tracking.
+                        </p>
+
+                        <p>Whether you're a group admin or just tired of the confusion, this bot makes your game day
+                            easy, reliable, and fun. No app needed. No login. Just smooth group chat automation.</p>
+
                         <div class="seo-keywords">
                             <div class="keyword-pill">
                                 <i class="fab fa-whatsapp"></i>
@@ -1033,13 +1142,13 @@
                                 <span>WhatsApp bot for soccer/volleyball games</span>
                             </div>
                         </div>
-                        
+
                         <div class="final-cta">
                             <a href="#try-now" class="btn btn-primary">Try the RSVP Bot Now</a>
                             <p>Join thousands of sports groups already using this to simplify game day</p>
                         </div>
                     </div>
-                    
+
                     <div class="seo-visual">
                         <div class="keyword-cloud">
                             <span class="keyword-sm">Sports RSVP</span>
@@ -1057,12 +1166,12 @@
             </div>
         </section>
     </main>
-    
+
     <section id="contact-us" class="contact-section">
         <div class="container">
             <h2 class="section-title fade-in">Get in Touch</h2>
             <p class="section-subtitle fade-in">Have questions or need help setting up the bot? We're here for you.</p>
-            
+
             <div class="contact-container">
                 <div class="contact-info slide-in-left">
                     <!-- <div class="contact-info-card">
@@ -1072,7 +1181,7 @@
                             </div>
                             <div class="contact-details">
                                 <h3>Email Us</h3>
-                                <p>hello@sportscheduler.app</p>
+                                <p>hello@PickupPal.app</p>
                                 <p class="response-time">We respond within 24 hours</p>
                             </div>
                         </div>
@@ -1099,32 +1208,35 @@
                             </div>
                         </div>
                     </div> -->
-                    
+
                     <div class="social-connect">
                         <h3>Connect With Us</h3>
                         <div class="social-icons-large">
-                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/mypickuppal" target="_blank" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/mypickuppal" target="_blank" aria-label="YouTube"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://tiktok.com/mypickuppal" target="_blank" aria-label="tiktok"><i
+                                    class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form-container slide-in-right">
-                    <form id="contact-form" name="sport-scheduler-contact" method="POST" data-netlify="true" class="contact-form">
+                    <form id="contact-form" name="sport-scheduler-contact" method="POST" data-netlify="true"
+                        class="contact-form">
                         <input type="hidden" name="form-name" value="sport-scheduler-contact" />
-                        
+
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" name="email" placeholder="Your email" required>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="subject">Subject</label>
                             <select id="subject" name="subject" required>
@@ -1135,12 +1247,13 @@
                                 <option value="partnership">Partnership Opportunity</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                            <textarea id="message" name="message" placeholder="How can we help you?"
+                                required></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-submit">
                             Send Message
                             <span class="submit-icon">
@@ -1158,9 +1271,9 @@
         <div class="container">
             <h2 class="section-title fade-in">Frequently Asked Questions</h2>
             <p class="section-intro fade-in">
-                Everything you need to know about using the SportScheduler WhatsApp bot for your pickup games.
+                Everything you need to know about using the PickupPal WhatsApp bot for your pickup games.
             </p>
-            
+
             <div class="faq-container fade-in">
                 <div class="faq-item">
                     <div class="faq-question">
@@ -1172,54 +1285,65 @@
                         <!-- <p>Adding the bot is simple: click the "Add the Bot to WhatsApp" button above, which will open a chat with our bot. Then just add this contact to your sports group, and you're ready to go! Type <code>!!help</code> to see all available commands.</p> -->
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Is SportScheduler free to use?</h3>
+                        <h3>Is PickupPal free to use?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! SportScheduler is free to use for basic features. We offer a premium tier with advanced features like attendance tracking, automated reminders, and custom settings for a small monthly fee. The free tier has everything you need to organize great pickup games.</p>
+                        <p>Yes! PickupPal is free to use for basic features. We offer a premium tier with advanced
+                            features like attendance tracking, automated reminders, and custom settings for a small
+                            monthly fee. The free tier has everything you need to organize great pickup games.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>How many players can join a game?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>You can set any number of player slots when creating a game. For example: <code>!!creategame 2024-06-15 7:00 PM 12 Downtown Field</code> creates a game with 12 player slots. There's no upper limit, so you can organize anything from tennis matches to full soccer teams.</p>
+                        <p>You can set any number of player slots when creating a game. For example:
+                            <code>!!creategame 2024-06-15 7:00 PM 12 Downtown Field</code> creates a game with 12 player
+                            slots. There's no upper limit, so you can organize anything from tennis matches to full
+                            soccer teams.
+                        </p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Can I schedule recurring games?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Use the <code>!!createrecurring</code> command to set up weekly or monthly games. For example: <code>!!createrecurring weekly thursday 7:00 PM 10 LA Fitness</code> will create a game every Thursday at the same time and location.</p>
+                        <p>Yes! Use the <code>!!createrecurring</code> command to set up weekly or monthly games. For
+                            example: <code>!!createrecurring weekly thursday 7:00 PM 10 LA Fitness</code> will create a
+                            game every Thursday at the same time and location.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>How do reminders work?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>SportScheduler automatically sends reminders to all signed-up players 24 hours and 2 hours before the game. Premium users can customize reminder timing and add additional reminders if needed.</p>
+                        <p>PickupPal automatically sends reminders to all signed-up players 24 hours and 2 hours before
+                            the game. Premium users can customize reminder timing and add additional reminders if
+                            needed.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Does it work in all countries?</h3>
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! Since SportScheduler works through WhatsApp, it's available anywhere WhatsApp operates. The bot supports English language commands, with more languages coming soon.</p>
+                        <p>Yes! Since PickupPal works through WhatsApp, it's available anywhere WhatsApp operates. The
+                            bot supports English language commands, with more languages coming soon.</p>
                     </div>
                 </div>
             </div>
@@ -1232,17 +1356,22 @@
                 <div class="footer-grid">
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <span>SportScheduler</span>
+                            <span>PickupPal</span>
                         </div>
-                        <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No more confusion.</p>
+                        <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No more
+                            confusion.</p>
                         <div class="social-icons">
-                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i
+                                    class="fab fa-youtube"></i></a>
                         </div>
                     </div>
-                    
+
                     <div class="footer-column">
                         <h4>Quick Links</h4>
                         <ul class="footer-links">
@@ -1253,7 +1382,7 @@
                             <li><a href="#try-now">Get Started</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-column">
                         <h4>Support</h4>
                         <ul class="footer-links">
@@ -1264,11 +1393,12 @@
                             <li><a href="https://www.whatsapp.com/business/api" target="_blank">WhatsApp API</a></li>
                         </ul>
                     </div>
-                    
+
                     <div class="footer-column">
                         <h4>Contact Us</h4>
                         <ul class="contact-info">
-                            <li><i class="fas fa-envelope"></i> <a href="mailto:hello@sportscheduler.app">hello@sportscheduler.app</a></li>
+                            <li><i class="fas fa-envelope"></i> <a
+                                    href="mailto:hello@PickupPal.app">hello@mypickuppal.com</a></li>
                             <li><i class="fas fa-map-marker-alt"></i> San Francisco, CA</li>
                         </ul>
                         <div class="newsletter">
@@ -1282,7 +1412,7 @@
                 </div>
             </div>
         </div>
-        
+
         <button id="back-to-top" aria-label="Back to top">
             <i class="fas fa-arrow-up"></i>
         </button>
@@ -1491,4 +1621,5 @@
         });
     </script>
 </body>
+
 </html>
