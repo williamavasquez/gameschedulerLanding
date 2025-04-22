@@ -1,7 +1,9 @@
 :root {
-    --primary-color: #25d366; /* WhatsApp green */
+    --primary-color: #25d366;
+    /* WhatsApp green */
     --primary-dark: #128c7e;
-    --secondary-color: #34b7f1; /* Secondary blue */
+    --secondary-color: #34b7f1;
+    /* Secondary blue */
     --dark-color: #075e54;
     --light-color: #f3f4f6;
     --text-color: #333333;
@@ -98,28 +100,24 @@ img {
 /* Header & Navigation */
 header {
     position: fixed;
-    width: 100%;
     top: 0;
-    min-height:55px;
-    display: flex;
-    flex-wrap: wrap;
     left: 0;
+    width: 100%;
+    background-color: var(--white);
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
 header.scrolled {
-    padding: 5px 0;
-    background-color: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 header nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 20px 0;
     transition: all 0.3s ease;
 }
@@ -127,9 +125,7 @@ header nav {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--dark-color);
-    z-index: 1000;
-    margin-right: 40px;
+    cursor: pointer;
 }
 
 .logo span {
@@ -139,17 +135,12 @@ header nav {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-right: auto;
+    gap: 30px;
 }
 
 .nav-links a {
-    font-size: 1rem;
     font-weight: 500;
-    color: var(--text-color);
-    transition: var(--transition);
     position: relative;
-    padding: 8px 0;
 }
 
 .nav-links a:after {
@@ -157,58 +148,28 @@ header nav {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -2px;
-    left: 0;
     background-color: var(--primary-color);
+    bottom: -5px;
+    left: 0;
     transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
 }
 
 .nav-links a:hover:after {
     width: 100%;
 }
 
-/* Navbar CTA Link Styling */
-.nav-links .nav-cta {
-    color: var(--primary-color);
-    font-weight: 600;
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    transition: all 0.3s ease;
-}
-
-.nav-links .nav-cta:hover {
+.nav-cta {
     background-color: var(--primary-color);
     color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    padding: 10px 20px;
+    border-radius: 50px;
 }
 
-.nav-links .nav-cta:after {
-    display: none;
+.nav-cta:hover {
+    background-color: var(--primary-dark);
 }
 
-.cta-button {
-    margin-left: 30px;
-}
-
-.cta-button .btn {
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-}
-
-.cta-button .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
-}
-
+/* Mobile Menu Button - Hidden by default */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -218,13 +179,137 @@ header nav {
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .mobile-menu-btn span {
+    display: block;
     width: 100%;
     height: 3px;
     background-color: var(--text-color);
-    transition: var(--transition);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Transformed hamburger when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile navigation containers */
+.mobile-nav-buttons {
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.desktop-nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Full-width buttons for mobile menu */
+.btn-mobile-full {
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Fix any potential button wrapping issues */
+.donate-button form,
+.mobile-donate-button form {
+    width: 100%;
+}
+
+.btn-donate, 
+.mobile-donate-button .btn-donate {
+    white-space: nowrap;
+}
+
+/* Ensure consistent spacing between buttons */
+.donate-button {
+    margin-right: 12px;
+}
+
+/* Mobile Responsiveness - 1100px breakpoint as requested */
+@media (max-width: 1100px) {
+    /* Show mobile menu button */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    /* Hide desktop navigation buttons */
+    .desktop-nav-buttons {
+        display: none;
+    }
+    
+    /* Mobile menu navigation links */
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 400px;
+        height: 100vh;
+        background-color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 80px 30px 40px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+    }
+    
+    /* When mobile menu is active */
+    .nav-links.active {
+        right: 0;
+    }
+    
+    /* Show mobile navigation buttons when menu is active */
+    .mobile-nav-buttons {
+        display: block;
+    }
+    
+    /* Style mobile menu links */
+    .nav-links a {
+        font-size: 18px;
+        padding: 12px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Prevent scrolling when mobile menu is open */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Smaller screens - additional tweaks */
+@media (max-width: 576px) {
+    .logo {
+        font-size: 1.6rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    header nav {
+        padding: 15px 0;
+    }
 }
 
 /* Hero Section */
@@ -290,7 +375,8 @@ h1 .highlight {
 }
 
 .phone-screen {
-    background-color: #ece5dd; /* WhatsApp chat background */
+    background-color: #ece5dd;
+    /* WhatsApp chat background */
     border-radius: 30px;
     height: 100%;
     padding: 20px;
@@ -301,8 +387,8 @@ h1 .highlight {
 }
 
 .chat-bubble {
-    max-width: 80%;
-    padding: 10px 15px;
+    /* max-width: 80%; */
+    padding: 8px;
     border-radius: 15px;
     position: relative;
     font-size: 0.9rem;
@@ -323,7 +409,8 @@ h1 .highlight {
 }
 
 .chat-bubble.outgoing {
-    background-color: #dcf8c6; /* WhatsApp outgoing message color */
+    background-color: #dcf8c6;
+    /* WhatsApp outgoing message color */
     align-self: flex-end;
     border-top-right-radius: 5px;
 }
@@ -356,6 +443,7 @@ h1 .highlight {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -375,9 +463,10 @@ h1 .highlight {
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(4, 1fr);
+    gap: 40px; */
 }
 
 .footer-logo {
@@ -395,6 +484,7 @@ h1 .highlight {
 
 .social-icons {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -414,6 +504,14 @@ h1 .highlight {
     background-color: var(--primary-color);
     color: var(--white);
     transform: translateY(-3px);
+}
+
+.footer-column {
+    margin:24px;
+}
+
+.footer-leftside-container {
+    /* width:200px; */
 }
 
 .footer-column h4 {
@@ -464,6 +562,8 @@ h1 .highlight {
     align-items: center;
     gap: 10px;
     color: var(--text-light);
+    word-break: break-word;
+
 }
 
 .contact-info li i {
@@ -592,35 +692,26 @@ h1 .highlight {
     transform: translateY(-5px);
 }
 
-/* Responsive Footer */
-@media (max-width: 992px) {
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
- 
-}
+
 
 @media (max-width: 768px) {
     .footer-top {
         padding: 50px 0 30px;
     }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
+
+ 
+
     .footer-bottom-content {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-    
+
     .legal-links {
         justify-content: center;
     }
-    
-   
+
+
 }
 
 @media (max-width: 576px) {
@@ -631,8 +722,8 @@ h1 .highlight {
         height: 40px;
         font-size: 1rem;
     }
-    
-   
+
+
 }
 
 /* General Section Styling */
@@ -642,6 +733,7 @@ section {
 }
 
 .section-title {
+    text-wrap: balance;
     font-size: 2.5rem;
     font-weight: 700;
     text-align: center;
@@ -661,7 +753,8 @@ section {
     margin-bottom: 60px;
 }
 
-.problem-column, .solution-column {
+.problem-column,
+.solution-column {
     flex: 1;
     background: var(--white);
     border-radius: 20px;
@@ -670,7 +763,8 @@ section {
     transition: transform 0.3s ease;
 }
 
-.problem-column:hover, .solution-column:hover {
+.problem-column:hover,
+.solution-column:hover {
     transform: translateY(-10px);
 }
 
@@ -710,24 +804,28 @@ section {
     margin: 0;
 }
 
-.problem-list li, .solution-list li {
+.problem-list li,
+.solution-list li {
     display: flex;
     align-items: flex-start;
     margin-bottom: 20px;
     transition: transform 0.2s ease;
 }
 
-.problem-list li:hover, .solution-list li:hover {
+.problem-list li:hover,
+.solution-list li:hover {
     transform: translateX(5px);
 }
 
-.problem-icon, .solution-icon {
+.problem-icon,
+.solution-icon {
     font-size: 1.2rem;
     margin-right: 15px;
     flex-shrink: 0;
 }
 
-.problem-list li p, .solution-list li p {
+.problem-list li p,
+.solution-list li p {
     margin: 0;
     font-size: 1.1rem;
 }
@@ -758,8 +856,8 @@ section {
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.fade-in.visible, 
-.slide-in-left.visible, 
+.fade-in.visible,
+.slide-in-left.visible,
 .slide-in-right.visible {
     opacity: 1;
     transform: translateX(0);
@@ -770,11 +868,12 @@ section {
     .problem-solution-container {
         flex-direction: column;
     }
-    
-    .problem-column, .solution-column {
+
+    .problem-column,
+    .solution-column {
         width: 100%;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
@@ -802,7 +901,8 @@ section {
 
 .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
     height: 0;
     overflow: hidden;
     border-radius: 20px;
@@ -870,13 +970,15 @@ section {
 }
 
 .commands-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    /* gap: 30px; */
     margin: 0 auto;
 }
 
 .command-card {
+    margin: 10px;
     background-color: var(--white);
     border-radius: 20px;
     padding: 30px;
@@ -954,9 +1056,12 @@ section {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-height: 300px; /* Always show with full height instead of 0 */
-    overflow: visible; /* Allow content to be visible */
-    transition: none; /* Remove the transition since we're not changing height */
+    max-height: 300px;
+    /* Always show with full height instead of 0 */
+    overflow: visible;
+    /* Allow content to be visible */
+    transition: none;
+    /* Remove the transition since we're not changing height */
 }
 
 /* Remove the hover style since we want it always visible */
@@ -1003,26 +1108,20 @@ section {
     margin: 0;
 }
 
-/* Responsive styles for How It Works section */
-@media (max-width: 992px) {
-    .commands-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media (max-width: 768px) {
     .commands-container {
         grid-template-columns: 1fr;
     }
-    
+
     .video-placeholder i {
         font-size: 3rem;
     }
-    
+
     .video-placeholder span {
         font-size: 1.5rem;
     }
-    
+
     .video-placeholder p {
         font-size: 1rem;
         max-width: 90%;
@@ -1108,16 +1207,16 @@ section {
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .feature-card {
         padding: 25px;
     }
-    
+
     .feature-icon {
         width: 50px;
         height: 50px;
     }
-    
+
     .feature-content h3 {
         font-size: 1.2rem;
     }
@@ -1307,36 +1406,18 @@ section {
     transform: scale(1.3);
 }
 
-/* Responsive styles for Automation section */
-@media (max-width: 992px) {
-    .automation-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    .automation-intro {
-        font-size: 1.3rem;
-    }
-    
-    .automation-description {
-        font-size: 1rem;
-    }
-    
-    .phone-sequence {
-        height: 350px;
-    }
-}
+
 
 @media (max-width: 768px) {
     .automation-intro {
         font-size: 1.2rem;
     }
-    
+
     .phone-sequence {
         height: 300px;
         max-width: 320px;
     }
-    
+
     .automation-feature:hover {
         transform: none;
     }
@@ -1346,7 +1427,7 @@ section {
     .feature-detail h3 {
         font-size: 1.1rem;
     }
-    
+
     .feature-detail p {
         font-size: 0.9rem;
     }
@@ -1601,65 +1682,44 @@ section {
     0% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-30px) rotate(180deg);
     }
+
     100% {
         transform: translateY(0) rotate(360deg);
     }
 }
 
-/* Responsive styles for Works for Any Sport section */
-@media (max-width: 992px) {
-    .sport-content-container {
-        flex-direction: column;
-        gap: 50px;
-    }
-    
-    .sport-card {
-        position: relative;
-        left: 0;
-        transform: translateX(0) rotateY(0) translateZ(0) !important;
-        margin: 0 auto;
-        display: none;
-    }
-    
-    .sport-card.active {
-        display: flex;
-    }
-    
-    .sport-carousel {
-        height: auto;
-    }
-}
 
 @media (max-width: 768px) {
     .sport-description {
         font-size: 1.1rem;
     }
-    
+
     .benefit-item {
         margin-bottom: 15px;
     }
-    
+
     .benefit-item p {
         font-size: 1rem;
     }
-    
+
     .sport-card {
         padding: 25px;
         max-width: 300px;
     }
-    
+
     .sport-icon {
         width: 70px;
         height: 70px;
     }
-    
+
     .sport-card h3 {
         font-size: 1.5rem;
     }
-    
+
     .benefit-item:hover {
         transform: none;
     }
@@ -1670,11 +1730,11 @@ section {
         width: 40px;
         height: 40px;
     }
-    
+
     .sport-option i {
         font-size: 1.2rem;
     }
-    
+
     .sport-card {
         max-width: 280px;
     }
@@ -1902,45 +1962,36 @@ section {
     font-size: 1.3rem;
 }
 
-/* Responsive styles for testimonials */
-@media (max-width: 992px) {
-    .testimonial-card {
-        padding: 30px;
-    }
-    
-    .testimonial-content p {
-        font-size: 1.1rem;
-    }
-}
+
 
 @media (max-width: 768px) {
     .testimonial-card {
         padding: 25px;
     }
-    
+
     .testimonial-avatar {
         width: 60px;
         height: 60px;
     }
-    
+
     .testimonial-meta h3 {
         font-size: 1.2rem;
     }
-    
+
     .testimonial-content p {
         font-size: 1rem;
     }
-    
+
     .trust-indicators {
         gap: 30px;
     }
-    
+
     .trust-icon {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
     }
-    
+
     .trust-item p {
         font-size: 1.1rem;
     }
@@ -1950,26 +2001,26 @@ section {
     .testimonial-slider {
         min-height: 350px;
     }
-    
+
     .testimonial-header {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .testimonial-avatar {
         margin-right: 0;
         margin-bottom: 15px;
     }
-    
+
     .testimonial-info {
         justify-content: center;
     }
-    
+
     .testimonial-stars {
         justify-content: center;
         display: flex;
     }
-    
+
     .trust-indicators {
         flex-direction: column;
         gap: 40px;
@@ -2264,7 +2315,9 @@ section {
     color: #f8a100;
 }
 
-.attendance-streak, .no-show-label, .cancelled-label {
+.attendance-streak,
+.no-show-label,
+.cancelled-label {
     margin-left: auto;
     font-size: 0.8rem;
     padding: 3px 8px;
@@ -2327,12 +2380,12 @@ section {
     .stats-container {
         flex-direction: column;
     }
-    
+
     .dashboard-mockup {
         max-width: 100%;
         transform: none;
     }
-    
+
     .dashboard-mockup:hover {
         transform: translateY(-10px);
     }
@@ -2342,33 +2395,34 @@ section {
     .stats-intro {
         font-size: 1.2rem;
     }
-    
+
     .stats-description {
         font-size: 1rem;
     }
-    
+
     .dashboard-metrics {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .metric-card {
         padding: 12px;
     }
-    
+
     .metric-value {
         font-size: 1.6rem;
     }
-    
-    .attendance-chart, .weekly-summary {
+
+    .attendance-chart,
+    .weekly-summary {
         padding: 15px;
     }
-    
+
     .player-name {
         width: 60px;
         font-size: 0.85rem;
     }
-    
+
     .cancelled-label {
         font-size: 0.7rem;
     }
@@ -2378,32 +2432,32 @@ section {
     .stats-benefit {
         padding: 12px;
     }
-    
+
     .benefit-icon {
         width: 40px;
         height: 40px;
     }
-    
+
     .benefit-icon i {
         font-size: 1.2rem;
     }
-    
+
     .benefit-content h3 {
         font-size: 1.1rem;
     }
-    
+
     .benefit-content p {
         font-size: 0.9rem;
     }
-    
+
     .enable-stats-cta {
         padding: 25px 15px;
     }
-    
+
     .enable-stats-cta p {
         font-size: 1.1rem;
     }
-    
+
     .enable-stats-cta code {
         font-size: 1rem;
     }
@@ -2450,7 +2504,7 @@ section {
     margin-bottom: 20px;
     line-height: 1.2;
     color: var(--white);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta-subheadline {
@@ -2548,9 +2602,12 @@ section {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -2574,10 +2631,12 @@ section {
         transform: translate(-50%, -50%) scale(0.8);
         opacity: 0.8;
     }
+
     50% {
         transform: translate(-50%, -50%) scale(1);
         opacity: 0.5;
     }
+
     100% {
         transform: translate(-50%, -50%) scale(0.8);
         opacity: 0.8;
@@ -2618,57 +2677,27 @@ section {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Responsive styles for CTA section */
-@media (max-width: 992px) {
-    .cta-container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .cta-headline {
-        font-size: 2.5rem;
-    }
-    
-    .cta-subheadline {
-        font-size: 1.2rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .cta-actions {
-        align-items: center;
-    }
-    
-    .cta-benefits {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .cta-phone {
-        transform: none;
-        margin-top: 40px;
-    }
-}
 
 @media (max-width: 768px) {
     .cta-headline {
         font-size: 2.2rem;
     }
-    
+
     .secondary-ctas {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
     }
-    
+
     .btn-medium {
         width: 100%;
     }
-    
+
     .cta-benefits {
         gap: 20px;
         justify-content: space-around;
     }
-    
+
     .benefit-item {
         width: 45%;
     }
@@ -2678,22 +2707,22 @@ section {
     .cta-headline {
         font-size: 2rem;
     }
-    
+
     .cta-subheadline {
         font-size: 1.1rem;
     }
-    
+
     .btn-cta {
         width: 100%;
         max-width: 300px;
     }
-    
+
     .cta-benefits {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
-    
+
     .benefit-item {
         width: 100%;
     }
@@ -2844,15 +2873,15 @@ section {
     .seo-title {
         font-size: 1.8rem;
     }
-    
+
     .seo-body p {
         font-size: 1rem;
     }
-    
+
     .keyword-pill {
         padding: 8px 15px;
     }
-    
+
     .keyword-pill span {
         font-size: 0.9rem;
     }
@@ -2862,27 +2891,27 @@ section {
     #seo-content {
         padding: 60px 0;
     }
-    
+
     .seo-title {
         font-size: 1.6rem;
     }
-    
+
     .seo-keywords {
         gap: 10px;
     }
-    
+
     .keyword-pill {
         padding: 6px 12px;
     }
-    
+
     .keyword-pill i {
         font-size: 1rem;
     }
-    
+
     .keyword-pill span {
         font-size: 0.85rem;
     }
-    
+
     .final-cta {
         padding: 20px 15px;
     }
@@ -2902,72 +2931,214 @@ section {
     transform: translateY(-3px);
 }
 
-/* Mobile responsiveness fixes for hero section */
-@media (max-width: 992px) {
-    #hero {
-        padding: 100px 0 60px;
-        text-align: center;
-    }
-    
-    .hero-content {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    .subheadline {
-        font-size: 1.1rem;
-        margin: 0 auto 30px;
-    }
-    
-    .hero-cta {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .hero-image {
-        position: relative;
-        width: 80%;
-        max-width: 300px;
-        top: 0;
-        right: 0;
-        transform: none;
-        margin: 50px auto 0;
-    }
-}
 
 @media (max-width: 576px) {
     #hero {
         padding: 80px 0 40px;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     .btn-large {
         width: 100%;
         margin-bottom: 10px;
     }
-    
+
     .hero-cta {
         flex-direction: column;
         width: 100%;
     }
 }
 
-/* Testimonial mobile fixes */
+
+@media (max-width: 576px) {
+    .testimonial-card {
+        padding: 20px;
+        min-height: 300px;
+    }
+
+    .testimonial-slider {
+        margin-bottom: 30px;
+    }
+
+    .testimonial-controls {
+        margin-top: 15px;
+    }
+
+    .testimonial-dots .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .column-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .problem-list li,
+    .solution-list li {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .problem-icon,
+    .solution-icon {
+        min-width: 24px;
+    }
+
+    .phone-notification {
+        padding: 12px;
+    }
+
+    .notification-title {
+        font-size: 0.9rem;
+    }
+
+    .notification-message {
+        font-size: 0.85rem;
+    }
+
+    .automation-feature {
+        margin-bottom: 20px;
+    }
+
+    .feature-detail h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-detail p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile responsive navbar styles */
 @media (max-width: 992px) {
+
+
+    .nav-links .nav-cta {
+        margin: 10px 0 0;
+        display: inline-block;
+    }
+
+    /* Responsive styles for Contact section */
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        width: 100%;
+    }
+
+    /* Mobile responsiveness fixes for Set It and Forget It section */
+
+    #problem-solution {
+        padding: 60px 0;
+    }
+
+    .problem-solution-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .problem-column,
+    .solution-column {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .automation-container {
+        flex-direction: column;
+    }
+
+    .automation-content,
+    .automation-visual {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .automation-features {
+        margin-bottom: 40px;
+    }
+
+    .phone-sequence {
+        height: 350px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .phone-notification {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    /* Mobile navigation styling */
+
+    .desktop-nav-buttons {
+        display: none;
+        /* Hide desktop buttons on mobile */
+    }
+
+    .mobile-nav-buttons {
+        display: block;
+        /* Show mobile buttons in hamburger menu */
+    }
+
+    .nav-links {
+        padding-bottom: 30px;
+        /* Add space at bottom of mobile menu */
+    }
+
+    .mobile-donate-button {
+        margin-bottom: 15px;
+    }
+
+    /* Make sure the mobile menu is wide enough */
+    .nav-links {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Fix mobile menu positioning */
+    .nav-links.active {
+        right: 0;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    /* Style mobile menu links */
+    .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+
+    /* Testimonial mobile fixes */
+
     .testimonial-slider {
         height: auto;
         position: relative;
         overflow: hidden;
         margin-bottom: 40px;
     }
-    
+
     .testimonial-card {
         width: 100%;
         max-width: 100%;
@@ -2980,231 +3151,251 @@ section {
         min-height: 250px;
         padding: 25px;
     }
-    
+
     .testimonial-content p {
         font-size: 1rem;
     }
-    
+
     .testimonial-header {
         flex-direction: row;
         align-items: center;
         margin-bottom: 15px;
     }
-    
+
     .testimonial-avatar {
         width: 60px;
         height: 60px;
         min-width: 60px;
     }
-    
+
     .testimonial-meta {
         margin-left: 15px;
     }
-    
+
     .testimonial-meta h3 {
         font-size: 1.1rem;
     }
-}
 
-@media (max-width: 576px) {
-    .testimonial-card {
-        padding: 20px;
-        min-height: 300px;
-    }
-    
-    .testimonial-slider {
-        margin-bottom: 30px;
-    }
-    
-    .testimonial-controls {
-        margin-top: 15px;
-    }
-    
-    .testimonial-dots .dot {
-        width: 10px;
-        height: 10px;
-    }
-}
 
-/* Mobile responsiveness fixes for Set It and Forget It section */
-@media (max-width: 992px) {
-    #problem-solution {
-        padding: 60px 0;
+
+
+
+    /* Responsive styles for How It Works section */
+
+    .commands-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .problem-solution-container {
+
+
+    /* Mobile responsiveness fixes for hero section */
+
+    #hero {
+        padding: 100px 0 60px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .subheadline {
+        font-size: 1.1rem;
+        margin: 0 auto 30px;
+    }
+
+    .hero-cta {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 80%;
+        max-width: 300px;
+        top: 0;
+        right: 0;
+        transform: none;
+        margin: 50px auto 0;
+    }
+
+
+    /* Responsive styles for CTA section */
+
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-headline {
+        font-size: 2.5rem;
+    }
+
+    .cta-subheadline {
+        font-size: 1.2rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cta-actions {
+        align-items: center;
+    }
+
+    .cta-benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-phone {
+        transform: none;
+        margin-top: 40px;
+    }
+
+
+    /* Responsive styles for Automation section */
+    .automation-container {
         flex-direction: column;
         gap: 40px;
     }
-    
-    .problem-column, .solution-column {
-        width: 100%;
-        max-width: 100%;
+
+    .automation-intro {
+        font-size: 1.3rem;
     }
-    
-    .automation-container {
-        flex-direction: column;
+
+    .automation-description {
+        font-size: 1rem;
     }
-    
-    .automation-content, .automation-visual {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-    
-    .automation-features {
-        margin-bottom: 40px;
-    }
-    
+
     .phone-sequence {
         height: 350px;
-        max-width: 320px;
-        margin: 0 auto;
     }
-    
-    .phone-notification {
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-    }
-}
 
-@media (max-width: 576px) {
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-    
-    .column-header h3 {
-        font-size: 1.4rem;
-    }
-    
-    .problem-list li, .solution-list li {
-        font-size: 0.95rem;
-        margin-bottom: 15px;
-    }
-    
-    .problem-icon, .solution-icon {
-        min-width: 24px;
-    }
-    
-    .phone-notification {
-        padding: 12px;
-    }
-    
-    .notification-title {
-        font-size: 0.9rem;
-    }
-    
-    .notification-message {
-        font-size: 0.85rem;
-    }
-    
-    .automation-feature {
-        margin-bottom: 20px;
-    }
-    
-    .feature-detail h3 {
-        font-size: 1.1rem;
-    }
-    
-    .feature-detail p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Mobile responsive navbar styles */
-@media (max-width: 992px) {
-    header nav {
-        position: relative;
-    }
-    
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        max-width: 400px;
-        height: 100vh;
-        background-color: var(--white);
+    /* Responsive styles for Works for Any Sport section */
+    .sport-content-container {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 100px 40px 40px;
-        z-index: 900;
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s ease-in-out;
-        overflow-y: auto;
+        gap: 50px;
     }
-    
-    .nav-links.active {
-        right: 0;
-    }
-    
-    .nav-links a {
-        margin: 0 0 20px;
-        font-size: 1.2rem;
-        opacity: 0;
-        transform: translateX(20px);
-        animation: slideIn 0.5s forwards;
-        animation-delay: calc(0.1s * var(--i, 0));
-    }
-    
-    @keyframes slideIn {
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
-    .mobile-menu-btn {
-        display: flex;
-        z-index: 1000;
+
+    .sport-card {
         position: relative;
-    }
-    
-    .mobile-menu-btn span {
-        transition: all 0.3s ease;
-    }
-    
-    .menu-open .mobile-menu-btn span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .menu-open .mobile-menu-btn span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-open .mobile-menu-btn span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-    
-    .menu-open body {
-        overflow: hidden;
-    }
-    
-    .cta-button {
+        left: 0;
+        transform: translateX(0) rotateY(0) translateZ(0) !important;
+        margin: 0 auto;
         display: none;
     }
-    
-    /* Add overlay behind mobile menu */
-    body::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 899;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
+
+    .sport-card.active {
+        display: flex;
     }
-    
-    .menu-open body::after {
+
+    .sport-carousel {
+        height: auto;
+    }
+
+    /* Responsive styles for testimonials */
+    .testimonial-card {
+        padding: 30px;
+    }
+
+    .testimonial-content p {
+        font-size: 1.1rem;
+    }
+
+}
+
+header nav {
+    position: relative;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 40px 40px;
+    z-index: 900;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease-in-out;
+    overflow-y: auto;
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.nav-links a {
+    margin: 0 0 20px;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.5s forwards;
+    animation-delay: calc(0.1s * var(--i, 0));
+}
+
+@keyframes slideIn {
+    to {
         opacity: 1;
-        visibility: visible;
+        transform: translateX(0);
     }
+}
+
+.mobile-menu-btn {
+    display: flex;
+    z-index: 1000;
+    position: relative;
+}
+
+.mobile-menu-btn span {
+    transition: all 0.3s ease;
+}
+
+.menu-open .mobile-menu-btn span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-open .mobile-menu-btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .mobile-menu-btn span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu-open body {
+    overflow: hidden;
+}
+
+.cta-button {
+    display: none;
+}
+
+/* Add overlay behind mobile menu */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 899;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.menu-open body::after {
+    opacity: 1;
+    visibility: visible;
+}
 }
 
 /* Navbar CTA Link Styling */
@@ -3225,12 +3416,7 @@ section {
 }
 
 /* Mobile responsiveness for new nav items */
-@media (max-width: 992px) {
-    .nav-links .nav-cta {
-        margin: 10px 0 0;
-        display: inline-block;
-    }
-}
+
 
 /* Contact Section Styles */
 .contact-section {
@@ -3330,6 +3516,7 @@ section {
 .social-icons-large {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -3436,27 +3623,21 @@ section {
     transform: translateX(5px);
 }
 
-/* Responsive styles for Contact section */
-@media (max-width: 992px) {
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .contact-info, .contact-form-container {
-        width: 100%;
-    }
-}
+
 
 @media (max-width: 576px) {
-    .contact-info-card, .contact-form-container, .social-connect {
+
+    .contact-info-card,
+    .contact-form-container,
+    .social-connect {
         padding: 25px;
     }
-    
+
     .contact-method {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .contact-icon {
         margin: 0 auto 15px;
     }
@@ -3469,8 +3650,13 @@ section {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .contact-form .form-group input.has-value,
@@ -3539,8 +3725,15 @@ section {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* FAQ Section */
@@ -3642,11 +3835,11 @@ section {
     .faq-question {
         padding: 20px;
     }
-    
+
     .faq-question h3 {
         font-size: 1.1rem;
     }
-    
+
     .faq-item.active .faq-answer {
         padding: 0 20px 20px;
     }
@@ -3656,16 +3849,16 @@ section {
     .faq-question {
         padding: 15px;
     }
-    
+
     .faq-question h3 {
         font-size: 1rem;
         line-height: 1.4;
     }
-    
+
     .faq-item.active .faq-answer {
         padding: 0 15px 15px;
     }
-    
+
     .faq-answer p {
         font-size: 0.95rem;
     }
@@ -3702,6 +3895,7 @@ section {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
     .donate-button .btn-donate,
     .cta-button .btn-primary {
         height: 36px;
@@ -3710,8 +3904,43 @@ section {
         font-size: 13px;
         /* line-height: 36px; */
     }
-    
+
     .donate-button {
         margin-right: 8px;
     }
+}
+
+/* Navbar mobile responsive fixes */
+
+/* Hide/show appropriate elements based on screen size */
+.mobile-nav-buttons {
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.desktop-nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Full-width buttons for mobile menu */
+.btn-mobile-full {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+
+/* Fix any potential button wrapping issues */
+.donate-button form,
+.mobile-donate-button form {
+    width: 100%;
+}
+
+.btn-donate,
+.mobile-donate-button .btn-donate {
+    white-space: nowrap;
 }

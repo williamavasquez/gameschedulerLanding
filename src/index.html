@@ -60,14 +60,141 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Enhanced Mobile Responsive Features Section */
+        #features {
+            padding: 4rem 0;
+        }
+        
+        #features .section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            background-color: rgba(37, 211, 102, 0.1);
+            color: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            font-size: 1.5rem;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #333;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .feature-content p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #features .section-title {
+                font-size: 2.2rem;
+                padding: 0 1rem;
+                text-align: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            #features .section-title {
+                font-size: 1.8rem;
+                line-height: 1.3;
+                margin-bottom: 2rem;
+            }
+            
+            .feature-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .feature-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .feature-content p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 
     <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -81,10 +208,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-VSMQQG4TFY');
-        
+
         // Custom dimensions for enhanced reporting
         gtag('set', {
             'user_properties': {
@@ -97,7 +224,52 @@
 </head>
 
 <body>
-    <header>
+    <!-- New Header with PP- prefixed classes -->
+    <header class="pp-header">
+        <div class="pp-container">
+            <nav class="pp-navbar">
+                <a href="#" class="pp-logo">
+                    <span class="pp-logo-accent">Pickup</span>Pal
+                </a>
+                
+                <div class="pp-menu-wrapper">
+                    <ul class="pp-menu">
+                        <li class="pp-menu-item"><a href="#how-it-works" class="pp-menu-link">How It Works</a></li>
+                        <li class="pp-menu-item"><a href="#features" class="pp-menu-link">Features</a></li>
+                        <li class="pp-menu-item"><a href="#testimonials" class="pp-menu-link">Testimonials</a></li>
+                        <li class="pp-menu-item"><a href="#stats" class="pp-menu-link">Stats</a></li>
+                    </ul>
+                    
+                    <div class="pp-nav-actions">
+                        <div class="pp-donate">
+                            <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                                <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
+                                <input type="hidden" name="no_recurring" value="0" />
+                                <input type="hidden" name="currency_code" value="USD" />
+                                <input type="hidden" name="item_name"
+                                    value="Buy me a beer if I saved you some time organizing your pickup game!" />
+                                <button type="submit" class="pp-btn pp-btn-donate">
+                                    🍻 Buy me a Beer
+                                </button>
+                            </form>
+                        </div>
+                        <div class="pp-contact">
+                            <a href="#contact-us" class="pp-btn pp-btn-primary">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="pp-hamburger mobile-menu-btn">
+                    <span class="pp-hamburger-line"></span>
+                    <span class="pp-hamburger-line"></span>
+                    <span class="pp-hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Original header - Hidden but still accessible for script.js -->
+    <header style="display: none;">
         <nav class="container">
             <div class="logo">
                 <span>Pickup</span>Pal
@@ -107,37 +279,47 @@
                 <a href="#features">Features</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="#stats">Stats</a>
-                <!-- <a href="#try-now" class="nav-cta">Try the Bot Free</a> -->
+                <!-- Mobile-only navigation buttons -->
+                <div class="mobile-nav-buttons">
+                    <div class="mobile-donate-button">
+                        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                            <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
+                            <input type="hidden" name="no_recurring" value="0" />
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <input type="hidden" name="item_name"
+                                value="Buy me a beer if I saved you some time organizing your pickup game!" />
+                            <button type="submit" class="btn btn-donate btn-mobile-full">
+                                🍻 Buy me a Beer
+                            </button>
+                        </form>
+                    </div>
+                    <div class="mobile-cta-button">
+                        <a href="#contact-us" class="btn btn-primary btn-mobile-full">Contact Us</a>
+                    </div>
+                </div>
             </div>
             <button class="mobile-menu-btn">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="donate-button">
-                <!-- <form action="https://www.paypal.com/donate" method="post" target="_top">
-                    <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
-                    <input type="hidden" name="no_recurring" value="0" />
-                    <input type="hidden" name="item_name"
-                        value="Buy me a beer if I saved you some time organizing your pickup game! " />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
-                        name="submit" title="PayPal - The safer, easier way to pay online!"
-                        alt="Donate with PayPal button" />
-                    <img alt="Donate to PickupPal" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-                </form> -->
-                <form action="https://www.paypal.com/donate" method="post" target="_blank">
-                    <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
-                    <input type="hidden" name="no_recurring" value="0" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="hidden" name="item_name" value="Buy me a beer if I saved you some time organizing your pickup game! " />
-                    <button type="submit" class="btn btn-donate">
-                        🍻 Buy me a Beer
-                    </button>
-                </form>
-            </div>
-            <div class="cta-button">
-                <a href="#contact-us" class="btn btn-primary">Contact Us</a>
+            <!-- Desktop-only buttons -->
+            <div class="desktop-nav-buttons">
+                <div class="donate-button">
+                    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                        <input type="hidden" name="business" value="KVNJ3TBBNQW4Y" />
+                        <input type="hidden" name="no_recurring" value="0" />
+                        <input type="hidden" name="currency_code" value="USD" />
+                        <input type="hidden" name="item_name"
+                            value="Buy me a beer if I saved you some time organizing your pickup game!" />
+                        <button type="submit" class="btn btn-donate">
+                            🍻 Buy me a Beer
+                        </button>
+                    </form>
+                </div>
+                <div class="cta-button">
+                    <a href="#contact-us" class="btn btn-primary">Contact Us</a>
+                </div>
             </div>
         </nav>
     </header>
@@ -1355,20 +1537,23 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-column">
-                        <div class="footer-logo">
-                            <span>PickupPal</span>
-                        </div>
-                        <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No more
-                            confusion.</p>
-                        <div class="social-icons">
-                            <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i
-                                    class="fab fa-youtube"></i></a>
+                        <div class="footer-leftside-container">
+                            <div class="footer-logo">
+                                <span>PickupPal</span>
+                            </div>
+                            <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No
+                                more
+                                confusion.</p>
+                            <div class="social-icons">
+                                <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i
+                                        class="fab fa-instagram"></i></a>
+                                <a href="https://facebook.com/" target="_blank" aria-label="Facebook"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i
+                                        class="fab fa-youtube"></i></a>
+                            </div>
                         </div>
                     </div>
 
@@ -1419,202 +1604,63 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="navbar.js"></script>
     
-    <!-- Google Analytics Event Tracking -->
+    <!-- Additional connector script to link the old and new navbar functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Track CTA button clicks
-            const ctaButtons = document.querySelectorAll('.btn-primary, .btn-cta');
-            ctaButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    const buttonText = this.textContent.trim();
-                    const section = this.closest('section')?.id || 'unknown';
-                    
-                    gtag('event', 'cta_click', {
-                        'button_text': buttonText,
-                        'section': section,
-                        'page_location': window.location.href
-                    });
-                });
+            // Get the hamburger buttons
+            const ppHamburger = document.querySelector('.pp-hamburger');
+            const originalMobileBtn = document.querySelector('header:not(.pp-header) .mobile-menu-btn');
+            
+            // Get the menu wrappers
+            const ppMenuWrapper = document.querySelector('.pp-menu-wrapper');
+            const originalNavLinks = document.querySelector('.nav-links');
+            
+            // Link the hamburger button click to also trigger the original button
+            ppHamburger.addEventListener('click', function() {
+                // This will trigger both the new navbar.js functionality and simulate a click on the original button
+                if (originalMobileBtn) {
+                    originalMobileBtn.click();
+                }
+                
+                // Also toggle the menu-open class on body and active class on the new menu
+                document.body.classList.toggle('menu-open');
+                ppMenuWrapper.classList.toggle('active');
             });
             
-            // Track form submissions
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    // Get form data for analytics
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const subject = document.getElementById('subject').value;
-                    
-                    // Hash email for privacy before sending to GA
-                    const hashedEmail = email ? btoa(email).substring(0, 10) : 'not_provided';
-                    
-                    gtag('event', 'form_submission', {
-                        'form_id': 'contact-form',
-                        'form_name': 'Contact Form',
-                        'subject': subject,
-                        'user_type': 'lead',
-                        'user_id': hashedEmail  // Pseudonymized identifier
-                    });
-                    
-                    // Set user properties for future tracking
-                    gtag('set', 'user_properties', {
-                        'has_contacted_us': true,
-                        'contact_subject': subject
-                    });
-                });
-                
-                // Track form field interactions
-                const formFields = contactForm.querySelectorAll('input, textarea, select');
-                formFields.forEach(field => {
-                    field.addEventListener('focus', function() {
-                        gtag('event', 'form_field_focus', {
-                            'field_id': this.id,
-                            'field_name': this.name
-                        });
-                    });
-                });
-            }
-            
-            // Newsletter signup tracking
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    const newsletterEmail = this.querySelector('input[type="email"]').value;
-                    const hashedEmail = newsletterEmail ? btoa(newsletterEmail).substring(0, 10) : 'not_provided';
-                    
-                    gtag('event', 'newsletter_signup', {
-                        'form_location': 'footer',
-                        'user_id': hashedEmail
-                    });
-                    
-                    // Set user properties
-                    gtag('set', 'user_properties', {
-                        'newsletter_subscriber': true,
-                        'subscription_date': new Date().toISOString().split('T')[0]
-                    });
-                });
-            }
-            
-            // Track video interactions
-            const videoPlaceholder = document.querySelector('.video-placeholder');
-            if (videoPlaceholder) {
-                videoPlaceholder.addEventListener('click', function() {
-                    gtag('event', 'video_start', {
-                        'video_title': 'How It Works Demo'
-                    });
-                });
-            }
-            
-            // Track feature card views (Intersection Observer)
-            const featureCards = document.querySelectorAll('.feature-card');
-            
-            if (featureCards.length && 'IntersectionObserver' in window) {
-                const featureObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const featureTitle = entry.target.querySelector('h3').textContent;
-                            gtag('event', 'feature_view', {
-                                'feature_name': featureTitle
-                            });
-                            featureObserver.unobserve(entry.target);
+            // Make the original nav-links status affect the pp-menu-wrapper
+            if (originalNavLinks && ppMenuWrapper) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.attributeName === 'class') {
+                            // When original nav-links gets 'active' class, add it to pp-menu-wrapper too
+                            if (originalNavLinks.classList.contains('active')) {
+                                ppMenuWrapper.classList.add('active');
+                            } else {
+                                ppMenuWrapper.classList.remove('active');
+                            }
                         }
                     });
-                }, {threshold: 0.75});
-                
-                featureCards.forEach(card => {
-                    featureObserver.observe(card);
                 });
+                
+                observer.observe(originalNavLinks, { attributes: true });
             }
             
-            // Track FAQ interactions
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', function() {
-                    const questionText = this.querySelector('h3').textContent;
-                    gtag('event', 'faq_click', {
-                        'question': questionText
-                    });
-                });
-            });
-            
-            // Track navigation link clicks
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    gtag('event', 'navigation_click', {
-                        'link_text': this.textContent,
-                        'link_url': this.getAttribute('href')
-                    });
-                });
-            });
-            
-            // Track scroll depth
-            let scrollMarkers = [25, 50, 75, 90, 100];
-            let markers = {};
-            scrollMarkers.forEach(marker => {
-                markers[marker] = false;
-            });
-            
-            window.addEventListener('scroll', function() {
-                const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-                
-                scrollMarkers.forEach(marker => {
-                    if (scrollPercent >= marker && !markers[marker]) {
-                        markers[marker] = true;
-                        gtag('event', 'scroll_depth', {
-                            'depth_percentage': marker,
-                            'page_title': document.title
-                        });
-                    }
-                });
-            });
-            
-            // Track testimonial navigation
-            const testimonialControls = document.querySelectorAll('.testimonial-arrow, .testimonial-dots .dot');
-            testimonialControls.forEach(control => {
-                control.addEventListener('click', function() {
-                    const direction = this.classList.contains('prev') ? 'previous' : 
-                                    this.classList.contains('next') ? 'next' : 
-                                    'dot-' + (this.dataset.index || '0');
+            // Close menu when clicking pp-menu links
+            const ppMenuLinks = document.querySelectorAll('.pp-menu-link');
+            ppMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    ppMenuWrapper.classList.remove('active');
+                    originalNavLinks.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    ppHamburger.classList.remove('active');
                     
-                    gtag('event', 'testimonial_navigation', {
-                        'direction': direction
-                    });
-                });
-            });
-            
-            // Track time spent on page
-            let timeMarkers = [30, 60, 120, 300]; // seconds
-            let timeMarked = {};
-            timeMarkers.forEach(marker => {
-                timeMarked[marker] = false;
-            });
-            
-            setInterval(function() {
-                const timeOnPage = Math.floor((new Date() - window.performance.timing.navigationStart) / 1000);
-                
-                timeMarkers.forEach(marker => {
-                    if (timeOnPage >= marker && !timeMarked[marker]) {
-                        timeMarked[marker] = true;
-                        gtag('event', 'time_on_page', {
-                            'duration_seconds': marker,
-                            'page_path': window.location.pathname
-                        });
-                    }
-                });
-            }, 1000);
-            
-            // Enhanced ecommerce for future use
-            document.querySelectorAll('[data-ecommerce-item]').forEach(item => {
-                item.addEventListener('click', function() {
-                    const productData = JSON.parse(this.dataset.product || '{}');
-                    if (Object.keys(productData).length) {
-                        gtag('event', 'select_item', {
-                            items: [productData]
-                        });
+                    // Simulate a click on the original nav link for smooth scrolling
+                    const href = this.getAttribute('href');
+                    const originalLink = document.querySelector(`.nav-links a[href="${href}"]`);
+                    if (originalLink) {
+                        originalLink.click();
                     }
                 });
             });

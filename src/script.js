@@ -468,8 +468,64 @@ document.addEventListener('DOMContentLoaded', function() {
         const contactForm = document.getElementById('contact-form');
         
         if (contactForm) {
+            // Track form field interactions
+            const formFields = contactForm.querySelectorAll('input, textarea, select');
+            formFields.forEach(field => {
+                field.addEventListener('focus', function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'form_field_focus', {
+                            'field_id': this.id,
+                            'field_name': this.name
+                        });
+                    }
+                });
+                
+                field.addEventListener('blur', () => {
+                    // Existing validation code
+                    if (this.value.trim() !== '') {
+                        this.classList.add('has-value');
+                    } else {
+                        this.classList.remove('has-value');
+                    }
+                    
+                    // Track field completion
+                    if (typeof gtag === 'function' && this.value.trim() !== '') {
+                        gtag('event', 'form_field_complete', {
+                            'field_id': this.id,
+                            'field_name': this.name
+                        });
+                    }
+                });
+            });
+
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault(); // Prevent the default form submission
+                
+                // Track form submission
+                if (typeof gtag === 'function') {
+                    // Get form data for analytics
+                    const name = document.getElementById('name')?.value || 'not_provided';
+                    const email = document.getElementById('email')?.value || 'not_provided';
+                    const subject = document.getElementById('subject')?.value || 'not_provided';
+                    
+                    // Pseudonymize email for privacy
+                    const hashedEmail = email !== 'not_provided' ? 
+                        btoa(email).substring(0, 10) : 'not_provided';
+                    
+                    gtag('event', 'form_submission', {
+                        'form_id': 'contact-form',
+                        'form_name': 'Contact Form',
+                        'subject': subject,
+                        'user_type': 'lead',
+                        'user_id': hashedEmail
+                    });
+                    
+                    // Set user properties for future tracking
+                    gtag('set', 'user_properties', {
+                        'has_contacted_us': true,
+                        'contact_subject': subject
+                    });
+                }
                 
                 // Show loading state
                 const submitButton = contactForm.querySelector('.btn-submit');
@@ -521,18 +577,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     body: new URLSearchParams(formData).toString()
                 }).catch(error => {
                     console.log('Netlify submission backup sent');
-                });
-            });
-            
-            // Client-side validation feedback
-            const inputs = contactForm.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                input.addEventListener('blur', () => {
-                    if (input.value.trim() !== '') {
-                        input.classList.add('has-value');
-                    } else {
-                        input.classList.remove('has-value');
-                    }
                 });
             });
         }
