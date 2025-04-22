@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navbar scroll effect
     const header = document.querySelector('header');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    // const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
     window.addEventListener('scroll', function() {
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu toggle
-    mobileMenuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
+    // // Mobile menu toggle
+    // mobileMenuBtn.addEventListener('click', function() {
+    //     navLinks.classList.toggle('active');
+    //     document.body.classList.toggle('menu-open');
+    // });
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
