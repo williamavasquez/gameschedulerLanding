@@ -1,39 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Select the necessary elements
-    const hamburger = document.querySelector('.pp-hamburger');
-    const menuWrapper = document.querySelector('.pp-menu-wrapper');
+            
+    const ppHamburger = document.querySelector('.pp-hamburger');
+    const originalMobileBtn = document.querySelector('header:not(.pp-header) .mobile-menu-btn');
     
-    // Toggle menu on hamburger click
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            menuWrapper.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-        });
-    }
     
-    // Close menu when clicking on menu links
-    const menuLinks = document.querySelectorAll('.pp-menu-link');
-    menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            menuWrapper.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
+    const ppMenuWrapper = document.querySelector('.pp-menu-wrapper');
+    const originalNavLinks = document.querySelector('.nav-links');
+    
+    
+    ppHamburger.addEventListener('click', function() {
+        
+        if (originalMobileBtn) {
+            originalMobileBtn.click();
+        }
+        
+        
+        document.body.classList.toggle('menu-open');
+        ppMenuWrapper.classList.toggle('active');
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (
-            menuWrapper && 
-            menuWrapper.classList.contains('active') && 
-            !menuWrapper.contains(e.target) && 
-            hamburger && 
-            !hamburger.contains(e.target)
-        ) {
-            hamburger.classList.remove('active');
-            menuWrapper.classList.remove('active');
+    
+    if (originalNavLinks && ppMenuWrapper) {
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.attributeName === 'class') {
+                    
+                    if (originalNavLinks.classList.contains('active')) {
+                        ppMenuWrapper.classList.add('active');
+                    } else {
+                        ppMenuWrapper.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        observer.observe(originalNavLinks, { attributes: true });
+    }
+    
+    
+    const ppMenuLinks = document.querySelectorAll('.pp-menu-link');
+    ppMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            ppMenuWrapper.classList.remove('active');
+            originalNavLinks.classList.remove('active');
             document.body.classList.remove('menu-open');
-        }
+            ppHamburger.classList.remove('active');
+            
+            
+            const href = this.getAttribute('href');
+            const originalLink = document.querySelector(`.nav-links a[href="${href}"]`);
+            if (originalLink) {
+                originalLink.click();
+            }
+        });
     });
 });

@@ -193,17 +193,6 @@
         }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VSMQQG4TFY');
-</script> -->
-
-
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSMQQG4TFY"></script>
     <script>
@@ -1606,66 +1595,6 @@
     <script src="script.js"></script>
     <script src="navbar.js"></script>
     
-    <!-- Additional connector script to link the old and new navbar functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the hamburger buttons
-            const ppHamburger = document.querySelector('.pp-hamburger');
-            const originalMobileBtn = document.querySelector('header:not(.pp-header) .mobile-menu-btn');
-            
-            // Get the menu wrappers
-            const ppMenuWrapper = document.querySelector('.pp-menu-wrapper');
-            const originalNavLinks = document.querySelector('.nav-links');
-            
-            // Link the hamburger button click to also trigger the original button
-            ppHamburger.addEventListener('click', function() {
-                // This will trigger both the new navbar.js functionality and simulate a click on the original button
-                if (originalMobileBtn) {
-                    originalMobileBtn.click();
-                }
-                
-                // Also toggle the menu-open class on body and active class on the new menu
-                document.body.classList.toggle('menu-open');
-                ppMenuWrapper.classList.toggle('active');
-            });
-            
-            // Make the original nav-links status affect the pp-menu-wrapper
-            if (originalNavLinks && ppMenuWrapper) {
-                const observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.attributeName === 'class') {
-                            // When original nav-links gets 'active' class, add it to pp-menu-wrapper too
-                            if (originalNavLinks.classList.contains('active')) {
-                                ppMenuWrapper.classList.add('active');
-                            } else {
-                                ppMenuWrapper.classList.remove('active');
-                            }
-                        }
-                    });
-                });
-                
-                observer.observe(originalNavLinks, { attributes: true });
-            }
-            
-            // Close menu when clicking pp-menu links
-            const ppMenuLinks = document.querySelectorAll('.pp-menu-link');
-            ppMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    ppMenuWrapper.classList.remove('active');
-                    originalNavLinks.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                    ppHamburger.classList.remove('active');
-                    
-                    // Simulate a click on the original nav link for smooth scrolling
-                    const href = this.getAttribute('href');
-                    const originalLink = document.querySelector(`.nav-links a[href="${href}"]`);
-                    if (originalLink) {
-                        originalLink.click();
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
