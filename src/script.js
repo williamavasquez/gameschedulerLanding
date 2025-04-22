@@ -676,4 +676,145 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize FAQ functionality
     setupFaqSection();
+
+    // Enhanced Analytics for PickupPal
+    const setupEnhancedAnalytics = () => {
+        // Don't run if gtag isn't defined
+        if (typeof gtag !== 'function') return;
+        
+        // Set returning visitor data
+        const isReturning = localStorage.getItem('pp_returning_visitor');
+        if (isReturning) {
+            gtag('set', 'user_properties', {
+                'visitor_type': 'returning',
+                'last_visit_date': localStorage.getItem('pp_last_visit') || 'unknown'
+            });
+        } else {
+            gtag('set', 'user_properties', {
+                'visitor_type': 'first_time',
+                'first_visit_date': new Date().toISOString().split('T')[0]
+            });
+            localStorage.setItem('pp_returning_visitor', 'true');
+        }
+        localStorage.setItem('pp_last_visit', new Date().toISOString().split('T')[0]);
+        
+        // Track feature card engagement
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            const featureName = card.querySelector('h3')?.innerText || `Feature ${index+1}`;
+            
+            // Intersection Observer to track feature views
+            const featureObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        gtag('event', 'feature_view', {
+                            'feature_name': featureName,
+                            'feature_position': index + 1
+                        });
+                        featureObserver.unobserve(card); // Only track first view
+                    }
+                });
+            }, { threshold: 0.7 }); // 70% of feature must be visible
+            
+            featureObserver.observe(card);
+            
+            // Track clicks on feature cards
+            card.addEventListener('click', () => {
+                gtag('event', 'feature_click', {
+                    'feature_name': featureName,
+                    'feature_position': index + 1
+                });
+            });
+        });
+        
+        // Track navigation link clicks
+        document.querySelectorAll('.pp-menu-link, .nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const linkText = this.innerText.trim();
+                const linkHref = this.getAttribute('href');
+                
+                gtag('event', 'navigation_click', {
+                    'link_text': linkText,
+                    'link_destination': linkHref
+                });
+            });
+        });
+        
+        // Scroll depth tracking
+        const scrollDepths = [25, 50, 75, 90, 100];
+        let sentDepths = {};
+        
+        const getScrollDepth = () => {
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return Math.round((scrollTop + winHeight) / docHeight * 100);
+        };
+        
+        window.addEventListener('scroll', () => {
+            // Throttle scroll events
+            if (!window.scrollThrottle) {
+                window.scrollThrottle = true;
+                setTimeout(() => {
+                    const scrollPercentage = getScrollDepth();
+                    
+                    scrollDepths.forEach(depth => {
+                        if (scrollPercentage >= depth && !sentDepths[depth]) {
+                            gtag('event', 'scroll_depth', {
+                                'depth_percentage': depth,
+                                'page_title': document.title
+                            });
+                            sentDepths[depth] = true;
+                        }
+                    });
+                    window.scrollThrottle = false;
+                }, 500);
+            }
+        });
+        
+        // Track CTA button clicks with attribution
+        document.querySelectorAll('.btn-primary, .pp-btn-primary, .btn-donate, .pp-btn-donate').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const btnText = this.innerText.trim();
+                const closestSection = this.closest('section');
+                const sectionId = closestSection ? closestSection.id : 'header';
+                
+                gtag('event', 'cta_click', {
+                    'button_text': btnText,
+                    'section_id': sectionId
+                });
+            });
+        });
+        
+        // Performance tracking after page load
+        window.addEventListener('load', () => {
+            // Wait for page to be fully loaded
+            setTimeout(() => {
+                if (window.performance) {
+                    const perfData = window.performance.timing;
+                    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                    
+                    gtag('event', 'performance', {
+                        'page_load_time': pageLoadTime,
+                        'dns_time': perfData.domainLookupEnd - perfData.domainLookupStart,
+                        'server_response_time': perfData.responseEnd - perfData.requestStart,
+                        'dom_interactive_time': perfData.domInteractive - perfData.navigationStart
+                    });
+                }
+            }, 0);
+        });
+        
+        // Track time on page when leaving
+        let sessionStart = new Date().getTime();
+        window.addEventListener('beforeunload', () => {
+            const sessionDuration = Math.round((new Date().getTime() - sessionStart) / 1000);
+            
+            gtag('event', 'time_on_page', {
+                'duration_seconds': sessionDuration,
+                'page_path': window.location.pathname
+            });
+        });
+    };
+
+    // Run the enhanced analytics setup
+    setupEnhancedAnalytics();
 });
