@@ -511,7 +511,7 @@ h1 .highlight {
 }
 
 .footer-leftside-container {
-    /* width:200px; */
+    width:300px;
 }
 
 .footer-column h4 {
@@ -1763,19 +1763,33 @@ section {
 }
 
 .testimonial-card {
-    background-color: var(--white);
+    flex: 0 0 calc(33.333% - 20px);
+    background: var(--white);
     border-radius: 20px;
-    padding: 35px;
+    overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-    margin: 20px 15px;
-    transition: all 0.4s ease;
-    flex: 0 0 calc(100% - 30px);
-    max-width: calc(100% - 30px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    transform: translateX(0);
+    height: 400px; /* Match the content height */
 }
 
-.testimonial-card::before {
+.testimonial-content {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 20px; /* Match the card's border radius */
+}
+
+.testimonial-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the area while maintaining aspect ratio */
+    object-position: center; /* Centers the image */
+    transition: transform 0.3s ease;
+}
+
+/* .testimonial-card::before {
     content: '"';
     position: absolute;
     top: 25px;
@@ -1785,7 +1799,8 @@ section {
     font-family: serif;
     line-height: 1;
     z-index: 0;
-}
+    height: 500px;
+} */
 
 .testimonial-header {
     display: flex;
@@ -1860,16 +1875,27 @@ section {
 }
 
 .testimonial-content {
-    position: relative;
-    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+    /* position: relative;
+    z-index: 1; */
 }
 
-.testimonial-content p {
+
+.testimonial-content img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+/* .testimonial-content p {
     font-size: 1.15rem;
     line-height: 1.6;
     color: var(--text-color);
     font-style: italic;
-}
+} */
 
 .testimonial-controls {
     display: flex;
@@ -3148,8 +3174,9 @@ section {
         margin: 0;
         left: 0;
         transition: transform 0.5s ease, opacity 0.5s ease;
-        height: auto;
-        min-height: 250px;
+        /* height: auto; */
+        /* min-height: 250px; */
+        height: 500px;
         padding: 25px;
     }
 
@@ -3944,4 +3971,27 @@ body::after {
 .btn-donate,
 .mobile-donate-button .btn-donate {
     white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 15px);
+        height: 350px; /* Slightly smaller on tablets */
+    }
+    
+    .testimonial-content {
+        height: 350px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonial-card {
+        flex: 0 0 100%;
+        height: 300px; /* Even smaller on mobile */
+    }
+    
+    .testimonial-content {
+        height: 300px;
+    }
 }

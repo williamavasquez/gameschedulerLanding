@@ -305,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Auto-rotation
         let autoRotate = setInterval(() => {
             showTestimonial(currentIndex + 1);
-        }, 6000);
+        }, 50000000);
         
         // Pause auto-rotation on hover or touch
         slider.addEventListener('mouseenter', () => {
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
         slider.addEventListener('mouseleave', () => {
             autoRotate = setInterval(() => {
                 showTestimonial(currentIndex + 1);
-            }, 6000);
+            }, 50000000);
         });
     };
 

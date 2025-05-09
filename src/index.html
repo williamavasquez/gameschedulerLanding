@@ -72,21 +72,21 @@
         #features {
             padding: 4rem 0;
         }
-        
+
         #features .section-title {
             margin-bottom: 3rem;
             text-align: center;
             font-size: 2.5rem;
             line-height: 1.2;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        
+
         .feature-card {
             background: #fff;
             border-radius: 12px;
@@ -97,12 +97,12 @@
             align-items: flex-start;
             height: 100%;
         }
-        
+
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
             background-color: rgba(37, 211, 102, 0.1);
             color: #25d366;
@@ -115,15 +115,15 @@
             margin-right: 1.5rem;
             flex-shrink: 0;
         }
-        
+
         .feature-icon i {
             font-size: 1.5rem;
         }
-        
+
         .feature-content {
             flex: 1;
         }
-        
+
         .feature-content h3 {
             margin-top: 0;
             margin-bottom: 0.75rem;
@@ -132,61 +132,61 @@
             font-weight: 600;
             line-height: 1.3;
         }
-        
+
         .feature-content p {
             margin: 0;
             color: #666;
             line-height: 1.5;
         }
-        
+
         /* Mobile Responsive Adjustments */
         @media (max-width: 992px) {
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
             #features .section-title {
                 font-size: 2.2rem;
                 padding: 0 1rem;
                 text-align: center;
             }
-            
+
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
                 padding: 0 1rem;
             }
-            
+
             .feature-card {
                 padding: 1.5rem;
             }
         }
-        
+
         @media (max-width: 480px) {
             #features .section-title {
                 font-size: 1.8rem;
                 line-height: 1.3;
                 margin-bottom: 2rem;
             }
-            
+
             .feature-card {
                 flex-direction: column;
                 text-align: center;
                 align-items: center;
             }
-            
+
             .feature-icon {
                 margin-right: 0;
                 margin-bottom: 1rem;
             }
-            
+
             .feature-content h3 {
                 font-size: 1.2rem;
                 margin-bottom: 0.5rem;
             }
-            
+
             .feature-content p {
                 font-size: 0.95rem;
             }
@@ -274,7 +274,7 @@
                 grid-template-columns: 1fr;
                 padding: 1rem;
             }
-            
+
             .command-card {
                 padding: 1rem;
             }
@@ -285,15 +285,15 @@
             .command-card {
                 background: var(--card-bg);
             }
-            
+
             .command-syntax {
                 background: rgba(255, 255, 255, 0.05);
             }
-            
+
             .chat-demo {
                 background: rgba(255, 255, 255, 0.03);
             }
-            
+
             .chat-bubble.incoming {
                 background: rgba(255, 255, 255, 0.05);
             }
@@ -308,6 +308,132 @@
         .btn-submit:disabled:hover {
             transform: none;
             box-shadow: none;
+        }
+
+        /* Testimonials Section Fix */
+        #testimonials {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 600px; /* Limit width for better aspect ratio */
+            margin: 0 auto 50px;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 350px;
+            overflow: hidden;
+        }
+
+        .testimonial-card {
+            /* background: var(--white); */
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            padding: 0;
+            margin: 0 10px;
+            max-width: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .testimonial-content {
+            width: 100%;
+            aspect-ratio: 4/3; /* Use a natural aspect ratio */
+            /* background: #f3f4f6; */
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Show the whole image, even if there are bars */
+            object-position: center;
+            /* background: #f3f4f6; */
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .testimonial-arrow {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* background: var(--white); */
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            font-size: 1.2rem;
+        }
+
+        .testimonial-arrow:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .testimonial-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dots .dot.active {
+            background: var(--primary-color);
+            transform: scale(1.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .testimonial-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+            
+            .testimonial-content {
+                height: 300px;
+            }
+            
+            .testimonial-controls {
+                margin-top: 30px;
+            }
         }
     </style>
 
@@ -338,15 +464,15 @@
                 <a href="#" class="pp-logo">
                     <span class="pp-logo-accent">Pickup</span>Pal
                 </a>
-                
+
                 <div class="pp-menu-wrapper">
                     <ul class="pp-menu">
                         <li class="pp-menu-item"><a href="#how-it-works" class="pp-menu-link">How It Works</a></li>
                         <li class="pp-menu-item"><a href="#features" class="pp-menu-link">Features</a></li>
                         <li class="pp-menu-item"><a href="#testimonials" class="pp-menu-link">Testimonials</a></li>
-                        <li class="pp-menu-item"><a href="#stats" class="pp-menu-link">Stats</a></li>
+                        <!-- <li class="pp-menu-item"><a href="#stats" class="pp-menu-link">Stats</a></li> -->
                     </ul>
-                    
+
                     <div class="pp-nav-actions">
                         <div class="pp-donate">
                             <form action="https://www.paypal.com/donate" method="post" target="_blank">
@@ -365,7 +491,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <button class="pp-hamburger mobile-menu-btn">
                     <span class="pp-hamburger-line"></span>
                     <span class="pp-hamburger-line"></span>
@@ -670,7 +796,8 @@
                         </div>
 
                         <div class="final-cta">
-                            <a href="#contact-us" onclick="prefillContactForm()" class="btn btn-primary">Try the RSVP Bot Now</a>
+                            <a href="#contact-us" onclick="prefillContactForm()" class="btn btn-primary">Try the RSVP
+                                Bot Now</a>
                             <p>Join thousands of sports groups already using this to simplify game day</p>
                         </div>
                     </div>
@@ -1076,111 +1203,31 @@
         <section id="testimonials">
             <div class="container">
                 <h2 class="section-title fade-in">What Players Are Saying</h2>
-
+                
                 <div class="testimonials-container">
+
                     <div class="testimonial-slider">
                         <div class="testimonial-card fade-in">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Basketball Player">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h3>Michael C.</h3>
-                                    <div class="testimonial-info">
-                                        <span class="sport-type">Basketball</span>
-                                        <span class="group-size">Group of 12</span>
-                                    </div>
-                                    <div class="testimonial-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="testimonial-content">
-                                <p>"We used to argue every week. Now it's smooth. This bot completely eliminated the
-                                    chaos of our pickup games. I don't have to worry about who's coming anymore."</p>
-                            </div>
-                        </div>
-
-                        <!-- <div class="testimonial-card fade-in">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Soccer Player">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h3>Sarah L.</h3>
-                                    <div class="testimonial-info">
-                                        <span class="sport-type">Soccer</span>
-                                        <span class="group-size">Group of 22</span>
-                                    </div>
-                                    <div class="testimonial-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-content">
-                                <p>"Joining a game takes 2 seconds. Zero confusion. I can't believe we used to do this manually with endless text messages and confusion about who's playing."</p>
-                            </div>
-                        </div> -->
-
-                        <div class="testimonial-card fade-in">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Basketball Player">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h3>Marcus J.</h3>
-                                    <div class="testimonial-info">
-                                        <span class="sport-type">Basketball</span>
-                                        <span class="group-size">Group of 12</span>
-                                    </div>
-                                    <div class="testimonial-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="testimonial-content">
-                                <p>"Our pickup games used to be so disorganized. With PickupPal, I just create the game
-                                    and the bot handles everything else - RSVPs, reminders, even waiting lists. It's
-                                    saved me hours of coordination every week!"</p>
+                                <img src="assets/imgs/testimonials1.jpeg" alt="Volleyball Player">
                             </div>
                         </div>
 
                         <div class="testimonial-card fade-in">
-                            <div class="testimonial-header">
-                                <div class="testimonial-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Volleyball Player">
-                                </div>
-                                <div class="testimonial-meta">
-                                    <h3>David R.</h3>
-                                    <div class="testimonial-info">
-                                        <span class="sport-type">Volleyball</span>
-                                        <span class="group-size">Group of 8</span>
-                                    </div>
-                                    <div class="testimonial-stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="testimonial-content">
-                                <p>"Finally — a bot that just works and doesn't get in the way. No more spreadsheets, no
-                                    more confusion about who's coming. Just simple commands and everything is
-                                    organized."</p>
+                                <img src="assets/imgs/testimonials2.jpeg" alt="Soccer Player">
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-content">
+                                <img src="assets/imgs/testimonials3.png" alt="Soccer Player">
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-content">
+                                <img src="assets/imgs/testimonials4.png" alt="Soccer Player">
                             </div>
                         </div>
                     </div>
@@ -1193,33 +1240,11 @@
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
                         </div>
                         <button class="testimonial-arrow next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
-                    </div>
-                </div>
-
-                <div class="trust-indicators fade-in">
-                    <div class="trust-item">
-                        <div class="trust-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <p><span class="highlight">5,000+</span> Active Players</p>
-                    </div>
-
-                    <div class="trust-item">
-                        <div class="trust-icon">
-                            <i class="fas fa-globe-americas"></i>
-                        </div>
-                        <p><span class="highlight">15+</span> Countries</p>
-                    </div>
-
-                    <div class="trust-item">
-                        <div class="trust-icon">
-                            <i class="fas fa-basketball-ball"></i>
-                        </div>
-                        <p><span class="highlight">12,000+</span> Games Scheduled</p>
                     </div>
                 </div>
             </div>
@@ -1396,7 +1421,8 @@
                                     <i class="fas fa-video"></i> Watch Demo
                                 </a> -->
 
-                                <a href="#contact-us" class="btn btn-secondary btn-medium" onclick="prefillContactForm()">
+                                <a href="#contact-us" class="btn btn-secondary btn-medium"
+                                    onclick="prefillContactForm()">
                                     <i class="fas fa-flask"></i> Try Test Group? Reach Out!
                                 </a>
                             </div>
@@ -1461,10 +1487,11 @@
     <section id="contact-us" class="contact-section">
         <div class="container">
             <h2 class="section-title fade-in">Get in Touch</h2>
-            <p style="text-align: center;" class="section-subtitle fade-in">Have questions or need help setting up the bot? We're here for you.</p>
+            <p style="text-align: center;" class="section-subtitle fade-in">Have questions or need help setting up the
+                bot? We're here for you.</p>
 
             <div class="contact-container">
-                <div class="contact-info slide-in-left">
+                <!-- <div class="contact-info slide-in-left">
 
                     <div class="social-connect">
                         <h3>Connect With Us</h3>
@@ -1477,10 +1504,11 @@
                                     class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="contact-form-container slide-in-right">
-                    <form id="contact-form" name="sport-scheduler-contact" method="POST" data-netlify="true" class="contact-form">
+                    <form id="contact-form" name="sport-scheduler-contact" method="POST" data-netlify="true"
+                        class="contact-form">
                         <input type="hidden" name="form-name" value="sport-scheduler-contact" />
 
                         <div class="form-group">
@@ -1507,7 +1535,8 @@
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+                            <textarea id="message" name="message" placeholder="How can we help you?"
+                                required></textarea>
                         </div>
 
                         <button type="submit" id="submit-button" class="btn btn-submit" disabled>
@@ -1618,7 +1647,7 @@
                             <p class="footer-tagline">Organize pickup games with zero hassle. No more copy/paste. No
                                 more
                                 confusion.</p>
-                            <div class="social-icons">
+                            <!-- <div class="social-icons">
                                 <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><i
                                         class="fab fa-twitter"></i></a>
                                 <a href="https://instagram.com/" target="_blank" aria-label="Instagram"><i
@@ -1627,7 +1656,7 @@
                                         class="fab fa-facebook-f"></i></a>
                                 <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i
                                         class="fab fa-youtube"></i></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -1637,7 +1666,7 @@
                             <li><a href="#how-it-works">How It Works</a></li>
                             <li><a href="#features">Features</a></li>
                             <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#stats">Stats</a></li>
+                            <!-- <li><a href="#stats">Stats</a></li> -->
                             <li><a href="#try-now">Get Started</a></li>
                         </ul>
                     </div>
@@ -1653,7 +1682,7 @@
                         </ul>
                     </div>
 
-                    <div class="footer-column">
+                    <!-- <div class="footer-column">
                         <h4>Contact Us</h4>
                         <ul class="contact-info">
                             <li><i class="fas fa-envelope"></i> <a
@@ -1667,7 +1696,7 @@
                                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -1679,50 +1708,50 @@
 
     <script src="script.js"></script>
     <script src="navbar.js"></script>
-    
+
     <script>
-    function prefillContactForm() {
-        const subjectSelect = document.getElementById('subject');
-        if (subjectSelect) {
-            subjectSelect.value = 'getbot';
+        function prefillContactForm() {
+            const subjectSelect = document.getElementById('subject');
+            if (subjectSelect) {
+                subjectSelect.value = 'getbot';
+            }
+
+            const messageTextarea = document.getElementById('message');
+            if (messageTextarea) {
+                messageTextarea.value = 'I want to add the bot to my group';
+            }
+
+            // Trigger validation after prefilling
+            const event = new Event('input');
+            subjectSelect.dispatchEvent(event);
+            messageTextarea.dispatchEvent(event);
         }
 
-        const messageTextarea = document.getElementById('message');
-        if (messageTextarea) {
-            messageTextarea.value = 'I want to add the bot to my group';
-        }
-        
-        // Trigger validation after prefilling
-        const event = new Event('input');
-        subjectSelect.dispatchEvent(event);
-        messageTextarea.dispatchEvent(event);
-    }
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contact-form');
+            const submitButton = document.getElementById('submit-button');
+            const formInputs = form.querySelectorAll('input, select, textarea');
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('contact-form');
-        const submitButton = document.getElementById('submit-button');
-        const formInputs = form.querySelectorAll('input, select, textarea');
+            // Function to check if all required fields are filled
+            function validateForm() {
+                let isValid = true;
+                formInputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        isValid = false;
+                    }
+                });
+                submitButton.disabled = !isValid;
+            }
 
-        // Function to check if all required fields are filled
-        function validateForm() {
-            let isValid = true;
+            // Add input event listeners to all form fields
             formInputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                }
+                input.addEventListener('input', validateForm);
+                input.addEventListener('change', validateForm);
             });
-            submitButton.disabled = !isValid;
-        }
 
-        // Add input event listeners to all form fields
-        formInputs.forEach(input => {
-            input.addEventListener('input', validateForm);
-            input.addEventListener('change', validateForm);
+            // Initial validation
+            validateForm();
         });
-
-        // Initial validation
-        validateForm();
-    });
     </script>
 </body>
 
