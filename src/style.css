@@ -409,7 +409,7 @@ h1 .highlight {
 }
 
 .chat-bubble.outgoing {
-    background-color: #dcf8c6;
+    /* background-color: #dcf8c6; */
     /* WhatsApp outgoing message color */
     align-self: flex-end;
     border-top-right-radius: 5px;
@@ -1084,6 +1084,7 @@ section {
 
 .chat-demo .chat-bubble.outgoing {
     background-color: #dcf8c6;
+    color: #000;
     align-self: flex-end;
     border-top-right-radius: 5px;
 }
