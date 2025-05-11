@@ -318,7 +318,8 @@
         }
 
         .testimonials-container {
-            max-width: 600px; /* Limit width for better aspect ratio */
+            max-width: 600px;
+            /* Limit width for better aspect ratio */
             margin: 0 auto 50px;
             position: relative;
         }
@@ -347,7 +348,8 @@
 
         .testimonial-content {
             width: 100%;
-            aspect-ratio: 4/3; /* Use a natural aspect ratio */
+            aspect-ratio: 4/3;
+            /* Use a natural aspect ratio */
             /* background: #f3f4f6; */
             border-radius: 20px;
             overflow: hidden;
@@ -359,7 +361,8 @@
         .testimonial-content img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Show the whole image, even if there are bars */
+            object-fit: contain;
+            /* Show the whole image, even if there are bars */
             object-position: center;
             /* background: #f3f4f6; */
             border-radius: 20px;
@@ -426,11 +429,11 @@
             .testimonial-card {
                 flex: 0 0 100%;
             }
-            
+
             .testimonial-content {
                 height: 300px;
             }
-            
+
             .testimonial-controls {
                 margin-top: 30px;
             }
@@ -755,8 +758,87 @@
         </section>
 
 
+        <section id="try-now">
+            <div class="container">
+                <div class="cta-container">
+                    <div class="cta-content fade-in">
+                        <h2 class="cta-headline">Ready to Make Game Day Effortless?</h2>
+                        <p class="cta-subheadline">Get started in seconds. The bot works in your WhatsApp group — no
+                            downloads or setup headaches.</p>
 
-        <section id="seo-content">
+                        <div class="cta-actions">
+                            <!-- <a href="#" class="btn btn-primary btn-large btn-cta">
+                                <i class="fab fa-whatsapp"></i> Add the Bot to WhatsApp
+                            </a> -->
+                            <div class="secondary-ctas">
+                                <!-- <a href="#how-it-works" class="btn btn-secondary btn-medium">
+                                    <i class="fas fa-video"></i> Watch Demo
+                                </a> -->
+
+                                <a href="#contact-us" class="btn btn-secondary btn-medium"
+                                    onclick="prefillContactForm()">
+                                    <i class="fas fa-flask"></i> Try Test Group? Reach Out!
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-visual fade-in">
+                        <div class="phone-mockup cta-phone">
+                            <div class="phone-screen">
+                                <div class="chat-bubble incoming">
+                                    <span class="chat-sender">PickupPal Bot</span>
+                                    <p style="color: #000;">👋 Hi there! I'm ready to help organize your games.</p>
+                                    <p style="color: #000;">Just add me to your WhatsApp group and type
+                                        <strong>!!help</strong> to get started.
+                                    </p>
+                                </div>
+                                <div class="floating-commands">
+                                    <div style="color: #000;" class="command">!!creategame</div>
+                                    <div style="color: #000;" class="command">!!join</div>
+                                    <div style="color: #000;" class="command">!!showgame</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pulse-circle"></div>
+                    </div>
+                </div>
+
+                <div class="cta-benefits fade-in">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <p>Set up in 30 seconds</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-unlock"></i>
+                        </div>
+                        <p>Free to start using</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <p>Works in any country</p>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <p>Full support included</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- <section id="seo-content">
             <div class="container">
                 <div class="seo-content-wrapper">
                     <h2 class="seo-title">Organize Weekly Pickup Games on WhatsApp with Zero Effort</h2>
@@ -817,11 +899,11 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <!-- Problem vs Solution section content will go here -->
-        <section id="problem-solution">
+        <!-- <section id="problem-solution">
             <div class="container">
                 <h2 class="section-title fade-in">Pickup Games Should Be Fun — Not a Mess</h2>
 
@@ -879,10 +961,6 @@
                                 <span class="solution-icon">✅</span>
                                 <p>Waitlist built-in</p>
                             </li>
-                            <!-- <li>
-                                <span class="solution-icon">✅</span>
-                                <p>Automated reminders and lockouts</p>
-                            </li> -->
                             <li>
                                 <span class="solution-icon">✅</span>
                                 <p>Coming soon: Optional payment & attendance tracking</p>
@@ -895,7 +973,7 @@
                     <p>This bot does what your group chat wants to do — but never does consistently.</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
         <section id="works-for-any-sport">
@@ -1101,7 +1179,7 @@
             </div>
         </section>
 
-        <section id="automation">
+        <!-- <section id="automation">
             <div class="container">
                 <h2 class="section-title fade-in">Set It and Forget It</h2>
 
@@ -1196,14 +1274,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
 
         <section id="testimonials">
             <div class="container">
                 <h2 class="section-title fade-in">What Players Are Saying</h2>
-                
+
                 <div class="testimonials-container">
 
                     <div class="testimonial-slider">
@@ -1404,83 +1482,7 @@
             </div>
         </section> -->
 
-        <section id="try-now">
-            <div class="container">
-                <div class="cta-container">
-                    <div class="cta-content fade-in">
-                        <h2 class="cta-headline">Ready to Make Game Day Effortless?</h2>
-                        <p class="cta-subheadline">Get started in seconds. The bot works in your WhatsApp group — no
-                            downloads or setup headaches.</p>
 
-                        <div class="cta-actions">
-                            <!-- <a href="#" class="btn btn-primary btn-large btn-cta">
-                                <i class="fab fa-whatsapp"></i> Add the Bot to WhatsApp
-                            </a> -->
-                            <div class="secondary-ctas">
-                                <!-- <a href="#how-it-works" class="btn btn-secondary btn-medium">
-                                    <i class="fas fa-video"></i> Watch Demo
-                                </a> -->
-
-                                <a href="#contact-us" class="btn btn-secondary btn-medium"
-                                    onclick="prefillContactForm()">
-                                    <i class="fas fa-flask"></i> Try Test Group? Reach Out!
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="cta-visual fade-in">
-                        <div class="phone-mockup cta-phone">
-                            <div class="phone-screen">
-                                <div class="chat-bubble incoming">
-                                    <span class="chat-sender">PickupPal Bot</span>
-                                    <p style="color: #000;">👋 Hi there! I'm ready to help organize your games.</p>
-                                    <p style="color: #000;">Just add me to your WhatsApp group and type
-                                        <strong>!!help</strong> to get started.
-                                    </p>
-                                </div>
-                                <div class="floating-commands">
-                                    <div style="color: #000;" class="command">!!creategame</div>
-                                    <div style="color: #000;" class="command">!!join</div>
-                                    <div style="color: #000;" class="command">!!showgame</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pulse-circle"></div>
-                    </div>
-                </div>
-
-                <div class="cta-benefits fade-in">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
-                        <p>Set up in 30 seconds</p>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-unlock"></i>
-                        </div>
-                        <p>Free to start using</p>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <p>Works in any country</p>
-                    </div>
-
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <p>Full support included</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
 
