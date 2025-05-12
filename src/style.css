@@ -373,7 +373,8 @@ h1 .highlight {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
     position: relative;
     overflow: hidden;
-    aspect-ratio: 9/19;
+    height:700px;
+    /* aspect-ratio: 9/19; */
 }
 
 .phone-screen {
@@ -2596,6 +2597,7 @@ section {
 }
 
 .cta-phone {
+    height:550px !important;
     max-width: 300px;
     transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
     box-shadow: 30px 50px 70px rgba(0, 0, 0, 0.3);
